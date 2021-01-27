@@ -1,4 +1,6 @@
-com/bst_aws/springboot/web/dto/HelloResponseDtoTest.java
- com.bst_aws.springboot.web.dto.HelloResponseDtoTest
+com/bst_aws/springboot/domain/posts/PostsRepositoryTest.java
+ com.bst_aws.springboot.domain.posts.PostsRepositoryTest
 com/bst_aws/springboot/web/HelloControllerTest.java
  com.bst_aws.springboot.web.HelloControllerTest
+com/bst_aws/springboot/web/dto/HelloResponseDtoTest.java
+ com.bst_aws.springboot.web.dto.HelloResponseDtoTest

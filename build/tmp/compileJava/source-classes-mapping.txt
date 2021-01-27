@@ -1,6 +1,11 @@
 com/bst_aws/springboot/Application.java
  com.bst_aws.springboot.Application
-com/bst_aws/springboot/web/dto/HelloResponseDto.java
- com.bst_aws.springboot.web.dto.HelloResponseDto
+com/bst_aws/springboot/domain/posts/PostsRepository.java
+ com.bst_aws.springboot.domain.posts.PostsRepository
+com/bst_aws/springboot/domain/posts/Posts.java
+ com.bst_aws.springboot.domain.posts.Posts
+ com.bst_aws.springboot.domain.posts.Posts$PostsBuilder
 com/bst_aws/springboot/web/HelloController.java
  com.bst_aws.springboot.web.HelloController
+com/bst_aws/springboot/web/dto/HelloResponseDto.java
+ com.bst_aws.springboot.web.dto.HelloResponseDto
