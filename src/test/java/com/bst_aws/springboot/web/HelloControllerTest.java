@@ -1,6 +1,6 @@
 package com.bst_aws.springboot.web;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -18,6 +18,7 @@ public class HelloControllerTest {
 
     @Autowired
     private MockMvc mvc;
+
 
     @Test
     public void hello가_리턴된다() throws Exception{

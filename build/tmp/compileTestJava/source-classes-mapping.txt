@@ -4,3 +4,5 @@ com/bst_aws/springboot/web/HelloControllerTest.java
  com.bst_aws.springboot.web.HelloControllerTest
 com/bst_aws/springboot/web/dto/HelloResponseDtoTest.java
  com.bst_aws.springboot.web.dto.HelloResponseDtoTest
+com/bst_aws/springboot/web/PostsApiControllerTest.java
+ com.bst_aws.springboot.web.PostsApiControllerTest
