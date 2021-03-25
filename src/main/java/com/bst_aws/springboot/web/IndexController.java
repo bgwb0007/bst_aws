@@ -33,6 +33,7 @@ public class IndexController {
     public String postsSave() {
         return "posts-save";
     }
+
     @GetMapping("/posts/update/{id}")
     public String postsUpdate(@PathVariable Long id, Model model) {
         PostsResponseDto dto = postsService.findById(id);
