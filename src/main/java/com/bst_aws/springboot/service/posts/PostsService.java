@@ -2,11 +2,10 @@ package com.bst_aws.springboot.service.posts;
 
 import com.bst_aws.springboot.domain.posts.Posts;
 import com.bst_aws.springboot.domain.posts.PostsRepository;
-import com.bst_aws.springboot.web.dto.PostsListResponseDto;
-import com.bst_aws.springboot.web.dto.PostsResponseDto;
-import com.bst_aws.springboot.web.dto.PostsSaveRequestDto;
-import com.bst_aws.springboot.web.dto.PostsUpdateRequestDto;
-import lombok.NoArgsConstructor;
+import com.bst_aws.springboot.web.dto.exercise.PostsListResponseDto;
+import com.bst_aws.springboot.web.dto.exercise.PostsResponseDto;
+import com.bst_aws.springboot.web.dto.exercise.PostsSaveRequestDto;
+import com.bst_aws.springboot.web.dto.exercise.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

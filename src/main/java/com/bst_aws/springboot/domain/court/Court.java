@@ -1,4 +1,4 @@
-package com.bst_aws.springboot.domain.lesson;
+package com.bst_aws.springboot.domain.court;
 
 import com.bst_aws.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Lesson extends BaseTimeEntity {
+public class Court extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class Lesson extends BaseTimeEntity {
     private Double n;
 
     @Builder
-    public Lesson(String name, String address, String web, String info, String district, Double n, Double e){
+    public Court(String name, String address, String web, String info, String district, Double n, Double e){
         this.name = name;
         this.address = address;
         this.web = web;
@@ -41,5 +41,5 @@ public class Lesson extends BaseTimeEntity {
         this.e = e;
         this.n = n;
     }
-
+    
 }
