@@ -29,8 +29,12 @@ public class IndexController {
     }
 
     @GetMapping("/posts/save")
-    public String postsSave() {
-        return "posts-save";
+    public String postsSave(Model model, @LoginUser SessionUser user) {
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+            return "posts-save";
+        }
+        return "index";
     }
 
     @GetMapping("/posts/update/{id}")
@@ -40,4 +44,10 @@ public class IndexController {
 
         return "posts-update";
     }
+    @GetMapping("/test")
+    public String test() {
+        return "menu/lesson";
+    }
+
+
 }
