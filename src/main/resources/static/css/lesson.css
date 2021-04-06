@@ -1,0 +1,144 @@
+<style>
+    body{
+        background-color: #F8F8F8;
+      }. {
+            
+        }
+        .navbar{
+            
+        }
+
+      .login{
+        font-size: 70%;
+      }
+      
+ 
+      #lessonSubtitle{
+        height: 130px;
+        width: 100%;
+        background-image: url(../../images/lessonSubtitle130.jpg);
+        background-repeat: no-repeat;
+        background-position: 10% 0%;
+        background-color: #030403;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      #lessonSubtitle span{
+        color: white;
+        font-size: 3rem;
+        margin-top: 45px;
+        display: inline-block;
+      }
+      #lessonSubtitle .lessonSubtitle_info{
+        display: none;
+      }
+
+      #map_box{
+        width: 80%;
+        height: 350px;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      @media (min-width: 800px) {
+        .map_box{
+          height: 500px;
+        }
+
+        #lessonSubtitle{
+        height: 200px;
+        width: 100%;
+        background-image: url(../../images/lessonSubtitle200.jpg);
+        background-repeat: no-repeat;
+        background-position: 10% 0%;
+        background-color: #030403;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        }
+        #lessonSubtitle .lessonSubtitle_info{
+          font-size: 1.6rem;
+          margin-top: 22px;
+          display: inline-block;
+        }
+      }
+
+      .lessonDistrict{
+        margin-top: 2rem;
+        font-size: 2.5rem;
+        padding-left: 1.5rem;
+      }
+
+      .lessonBox{
+        margin-bottom: 1.1rem;
+
+      }
+
+
+      .lessonTitle{
+        background-image: url(../../images/racket64.png);
+        background-repeat: no-repeat;
+        background-position: 95% -100%;
+
+        /*박스사이징*/
+        border : 1px solid #95A099;
+        box-shadow: 2px 2px 2px 2px #95A099;
+        padding: 1rem 1rem;
+        text-align: center;
+
+        /*폰트*/
+        font-size: 2rem;
+        color: black;
+        border-radius: 10px;
+        
+      }
+
+      .lessonDetail{
+        padding: 1rem 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #95A099;
+        border-top: none;
+        border-radius: 5px;
+      }
+
+      .lessonDetail_titles {
+        display: inline-block;
+        width: 13%;
+        vertical-align: top;
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .lessonDetail_infos{
+        display: inline-block;
+        width: 80%;
+        white-space: pre-wrap;
+        overflow: auto;
+      }
+
+
+
+      .footer{
+        height: 100px;
+        width: 100%;
+        background-color: #CFD2D0;
+
+      }
+
+      .footerInfo{
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 1.2rem;
+      }
+      .footerInfo a{
+        color: black;
+        text-decoration: none;
+      }
+
+
+ @media (min-width: 950px) {
+
+        .footerInfo{
+          font-size: 1.4rem;
+        }
+      }
+</style>

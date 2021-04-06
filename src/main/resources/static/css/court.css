@@ -1,0 +1,140 @@
+<style>
+      body{
+        background-color: #F8F8F8;
+      }
+
+      .login{
+        font-size: 70%;
+      }
+      
+
+      #courtSubtitle{
+        height: 130px;
+        width: 100%;
+        background-image: url(../../images/courtSubtitle130.jpg);
+        background-repeat: no-repeat;
+        background-position: 90% 0%;
+        background-color: #030403;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      #courtSubtitle span{
+        color: white;
+        font-size: 3rem;
+        margin-top: 45px;
+        display: inline-block;
+      }
+      #courtSubtitle .courtSubtitle_info{
+        font-size: 1.6rem;
+        margin-top: 22px;
+        display: none;
+      }
+
+      #map_box{
+        width: 80%;
+        height: 350px;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      @media (min-width: 800px) {
+        .map_box{
+          height: 500px;
+        }
+
+        #courtSubtitle{
+        height: 200px;
+        width: 100%;
+        background-image: url(../../images/courtSubtitle200.jpg);
+        background-repeat: no-repeat;
+        background-position: 90% 0%;
+        background-color: #030403;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        }
+        #courtSubtitle .courtSubtitle_info{
+        font-size: 1.6rem;
+        margin-top: 22px;
+        display: inline-block;
+      }
+      }
+
+      .courtDistrict{
+        margin-top: 2rem;
+        font-size: 2.5rem;
+        padding-left: 1.5rem;
+      }
+
+      .courtBox{
+        margin-bottom: 1.1rem;
+
+      }
+
+
+      .courtTitle{
+        background-image: url(../../images/racket64.png);
+        background-repeat: no-repeat;
+        background-position: 95% -100%;
+
+        /*박스사이징*/
+        border : 1px solid #95A099;
+        box-shadow: 2px 2px 2px 2px #95A099;
+        padding: 1rem 1rem;
+        text-align: center;
+
+        /*폰트*/
+        font-size: 2rem;
+        color: black;
+        border-radius: 10px;
+        
+      }
+
+      .courtDetail{
+        padding: 1rem 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #95A099;
+        border-top: none;
+        border-radius: 5px;
+      }
+
+      .courtDetail_titles {
+        display: inline-block;
+        width: 13%;
+        vertical-align: top;
+        margin-right: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      .courtDetail_infos{
+        display: inline-block;
+        width: 80%;
+        white-space: pre-wrap;
+        overflow: auto;
+      }
+
+      .footer{
+        height: 100px;
+        width: 100%;
+        background-color: #CFD2D0;
+
+      }
+
+      .footerInfo{
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 1.2rem;
+      }
+      .footerInfo a{
+        color: black;
+        text-decoration: none;
+      }
+
+
+ @media (min-width: 950px) {
+  
+        .footerInfo{
+          font-size: 1.4rem;
+        }
+      }
+
+    </style>

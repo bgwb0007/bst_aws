@@ -1,0 +1,176 @@
+
+
+/*index 부분*/
+      body{
+        background-color: #F8F8F8;
+      }
+      .navbar-brand span{
+        font-family: 'Jua', sans-serif;
+      }
+      .login{
+        font-size: 70%;
+      }
+
+      .carousel-item{
+        height: 500px;
+      }
+      .carousel-item.item1{
+        background-image: url(images/wallpaper_1.jpg);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .carousel-item.item2{
+        background-image: url(images/wallpaper_2.jpg);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+      }
+      .carousel-item.item3{
+        background-image: url(images/wallpaper_3.jpg);
+        background-position: 50% 75%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .float_box{
+        background-color: #0A5A2C;
+        float: center;
+        width: 100%;
+        height: 250px;
+        margin-bottom: 1px;
+        text-align: center;
+        padding-top: 3rem;
+      }
+      .float_box h4{
+        color: white;
+      }
+      .float_box h6{
+        color: white;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .float_box a{
+        font-weight: 700;
+        padding: 0.7rem 1.5rem;
+        border-radius: 5px;
+        background-color: #52912E;
+        color: #071F3E;
+      }
+      .float_box a:hover{
+        text-decoration: none;
+
+      }
+
+      
+      #AD1{
+        width: 100%;
+        height: 100px;
+        background-color: black;
+        text-align: center;
+      }
+      #AD1 div{
+        display: inline-block;
+        background-image: url(images/wallpaper_6.jpg); 
+        background-size: contain;
+        height: 100%;
+        width: 25%;
+      }
+
+      .aboutUs{
+        width: 100%;
+        height: 350px;
+        text-align: center;
+        padding-top: 3rem;
+      }
+      .aboutUs h2{
+        margin-bottom: 3rem;
+      }
+      .aboutUsInfo{
+        margin-right: 1.7rem;
+        margin-left: 1.7rem;
+        margin-bottom: 2rem;
+        line-height: 1.5rem;
+        font-size: 0.8rem;
+        font-family: 'Jua', sans-serif;
+      }
+
+
+      
+
+
+ @media (min-width: 950px) {
+        .float_box_p{
+          margin-top: 1rem;
+          overflow: hidden;
+          text-align: center;
+        }
+        .float_box{
+          width: 300px;
+          display: inline-block;
+          vertical-align: top;
+        }
+        #AD1{
+          margin-top: 1rem;
+        }
+        
+        .aboutUsInfo{
+        margin-right: 1.7rem;
+        margin-left: 1.7rem;
+        margin-bottom: 2rem;
+        line-height: 2rem;
+        font-size: 1.2rem;
+        font-family: 'Jua', sans-serif;
+        }
+
+        .footerInfo{
+          font-size: 1rem;
+        }
+      }
+
+
+
+        .item1_info{
+      }
+      .item1_info{
+        vertical-align: middle;
+        margin-top: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        color: white;
+        font-size: 25px;
+        padding-left: 10%;
+        display: inline-block;
+      }
+      .item1_info p {
+        border: 2.5px solid white;
+        padding: 1rem;
+      }
+
+
+      .footerclass{
+        height: 100px;
+        width: 100%;
+        background-color: #CFD2D0;
+
+      }
+      .footerclassInfo{
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 0.8rem;
+      }
+      .footerclassInfo a{
+        color: black;
+        text-decoration: none;
+      }
+
+       @media (min-width: 950px) {
+
+        .footerclassInfo{
+          font-size: 1rem;
+        }
+        
+
+      }
