@@ -1,4 +1,4 @@
-package com.bst_aws.springboot.domain.visitedCount;
+package com.bst_aws.springboot.domain.vcount;
 
 import com.bst_aws.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Getter
 @NoArgsConstructor
 @Entity
-public class VisitedCount extends BaseTimeEntity {
+public class VCount extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,13 +25,16 @@ public class VisitedCount extends BaseTimeEntity {
 
     private Long userId;
 
+
+
+
     @Builder
-    public VisitedCount(Integer count, String createdBy, Long userId){
+    public VCount(Integer count, String createdBy, Long userId){
         this.count = count;
         this.createdBy = createdBy;
         this.userId = userId;
     }
-    public VisitedCount update(Integer count){
+    public VCount update(Integer count){
         this.count = count;
         return this;
     }
