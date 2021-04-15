@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.bst_aws.springboot.web.PostApiControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.bst_aws.springboot.web.PostApiControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.bst_aws.springboot.web.html">com.bst_aws.springboot.web</a> &gt; PostApiControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.085s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Post_등록된다</td>
+<td class="success">0.041s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Post_수정된다</td>
+<td class="success">0.044s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2021-04-15 01:41:54.855  INFO 35564 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bst_aws.springboot.web.PostApiControllerTest], using SpringBootContextLoader
+2021-04-15 01:41:54.857  INFO 35564 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.bst_aws.springboot.web.PostApiControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-04-15 01:41:54.857  INFO 35564 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.bst_aws.springboot.web.PostApiControllerTest]: PostApiControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-04-15 01:41:54.859  INFO 35564 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.bst_aws.springboot.Application for test class com.bst_aws.springboot.web.PostApiControllerTest
+2021-04-15 01:41:54.861  INFO 35564 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2021-04-15 01:41:54.862  INFO 35564 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@67d7f18f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17d9b5e3, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@e4271ff, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@57784d37, org.springframework.test.context.support.DirtiesContextTestExecutionListener@f7b85de, org.springframework.test.context.transaction.TransactionalTestExecutionListener@55574f7f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@488711a3, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@5d83ec71, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@e85d76a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@61c65d72, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@113c42e0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@531ec4d2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7380675c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@207e8993]
+2021-04-15 01:41:54.873  INFO 35564 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2021-04-15 01:41:54.873  INFO 35564 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-15 01:41:54.877  INFO 35564 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+Hibernate: insert into post (created_date, modified_date, content, created_by, d_day, district, hits, status, title, user_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select post0_.id as id1_2_, post0_.created_date as created_2_2_, post0_.modified_date as modified3_2_, post0_.content as content4_2_, post0_.created_by as created_5_2_, post0_.d_day as d_day6_2_, post0_.district as district7_2_, post0_.hits as hits8_2_, post0_.status as status9_2_, post0_.title as title10_2_, post0_.user_id as user_id11_2_ from post post0_
+Hibernate: select post0_.id as id1_2_, post0_.created_date as created_2_2_, post0_.modified_date as modified3_2_, post0_.content as content4_2_, post0_.created_by as created_5_2_, post0_.d_day as d_day6_2_, post0_.district as district7_2_, post0_.hits as hits8_2_, post0_.status as status9_2_, post0_.title as title10_2_, post0_.user_id as user_id11_2_ from post post0_
+Hibernate: delete from post where id=?
+2021-04-15 01:41:54.919  INFO 35564 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2021-04-15 01:41:54.919  INFO 35564 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-04-15 01:41:54.925  INFO 35564 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
+Hibernate: insert into post (created_date, modified_date, content, created_by, d_day, district, hits, status, title, user_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select post0_.id as id1_2_0_, post0_.created_date as created_2_2_0_, post0_.modified_date as modified3_2_0_, post0_.content as content4_2_0_, post0_.created_by as created_5_2_0_, post0_.d_day as d_day6_2_0_, post0_.district as district7_2_0_, post0_.hits as hits8_2_0_, post0_.status as status9_2_0_, post0_.title as title10_2_0_, post0_.user_id as user_id11_2_0_ from post post0_ where post0_.id=?
+Hibernate: update post set created_date=?, modified_date=?, content=?, created_by=?, d_day=?, district=?, hits=?, status=?, title=?, user_id=? where id=?
+Hibernate: select post0_.id as id1_2_, post0_.created_date as created_2_2_, post0_.modified_date as modified3_2_, post0_.content as content4_2_, post0_.created_by as created_5_2_, post0_.d_day as d_day6_2_, post0_.district as district7_2_, post0_.hits as hits8_2_, post0_.status as status9_2_, post0_.title as title10_2_, post0_.user_id as user_id11_2_ from post post0_
+Hibernate: select post0_.id as id1_2_, post0_.created_date as created_2_2_, post0_.modified_date as modified3_2_, post0_.content as content4_2_, post0_.created_by as created_5_2_, post0_.d_day as d_day6_2_, post0_.district as district7_2_, post0_.hits as hits8_2_, post0_.status as status9_2_, post0_.title as title10_2_, post0_.user_id as user_id11_2_ from post post0_
+Hibernate: delete from post where id=?
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.10.2</a> at 2021. 4. 15 오전 1:41:56</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
-<style>
+
       body{
-        background-color: #F8F8F8;
+        background-color: #f8f8f8;
       }
 
       .login{
@@ -79,7 +79,7 @@
 
         /*박스사이징*/
         border : 1px solid #95A099;
-        box-shadow: 2px 2px 2px 2px #95A099;
+        box-shadow: 2px 2px 2px 2px #95a099;
         padding: 1rem 1rem;
         text-align: center;
 
@@ -136,5 +136,3 @@
           font-size: 1.4rem;
         }
       }
-
-    </style>

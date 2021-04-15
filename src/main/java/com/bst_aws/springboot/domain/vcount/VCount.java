@@ -21,18 +21,15 @@ public class VCount extends BaseTimeEntity {
 
     private Integer count;
 
-    private String createdBy;
+    private String visitedDate;
 
-    private Long userId;
-
-
-
+    private String userEmail;
 
     @Builder
-    public VCount(Integer count, String createdBy, Long userId){
+    public VCount(Integer count, String visitedDate, String userEmail){
         this.count = count;
-        this.createdBy = createdBy;
-        this.userId = userId;
+        this.visitedDate = visitedDate;
+        this.userEmail = userEmail;
     }
     public VCount update(Integer count){
         this.count = count;
