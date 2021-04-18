@@ -3,6 +3,7 @@ package com.bst_aws.springboot.web.exercise;
 
 import com.bst_aws.springboot.config.auth.LoginUser;
 import com.bst_aws.springboot.config.auth.dto.SessionUser;
+import com.bst_aws.springboot.service.lesson.LessonService;
 import com.bst_aws.springboot.service.posts.PostsService;
 import com.bst_aws.springboot.service.vcount.VCountService;
 import com.bst_aws.springboot.web.dto.exercise.PostsResponseDto;
@@ -21,7 +22,7 @@ import java.time.LocalDate;
 public class IndexController {
 
     private final PostsService postsService;
-    private final VCountService vCountService;
+    private final LessonService lessonService;
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
@@ -30,14 +31,7 @@ public class IndexController {
             model.addAttribute("userName", user.getName());
             userEmail = user.getEmail();
         }
-        /*// 방문자수 count
-        VCountSaveRequestDto requestDto = new VCountSaveRequestDto();
-        requestDto.builder()
-                .userEmail(userEmail)
-                .visitedDate(LocalDate.now().toString())
-                .count(1)
-                .build();
-        vCountService.saveOrUpdate(requestDto);*/
+
         return "index";
     }
 
@@ -60,6 +54,12 @@ public class IndexController {
     @GetMapping("/test")
     public String test() {
         return "new_index";
+    }
+    @GetMapping("/lesson")
+    public String lesson(Model model) {
+        model.addAttribute("lessons", lessonService.findAllAsc());
+
+        return "menu/lesson/lesson";
     }
 
 

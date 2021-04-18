@@ -54,4 +54,36 @@ public class LessonRepositoryTest {
 
     }
 
+    @Test
+    public void 지역목록_불러오기(){
+        //givne
+        lessonRepository.save(Lesson.builder()
+                .name("구덕운동장")
+                .address("부산시 서구 구덕운동장")
+                .web("http://www.rnejrejrje.com")
+                .info("레슨받기 좋아요")
+                .district("서구")
+                .e(3.2222)
+                .n(32.22201)
+                .build());
+        lessonRepository.save(Lesson.builder()
+                .name("사직실내")
+                .address("사직동")
+                .web("web-wwww.w.w.w..w.w")
+                .info("실내체육관")
+                .district("동래구")
+                .e(2.3333)
+                .n(10.22)
+                .build());
+        //when
+        List<String> districtList = lessonRepository.findAllDistrictList();
+        //then
+        String d1 = districtList.get(0);
+        assertThat(d1).isEqualTo("동래구");
+
+        String d2 = districtList.get(1);
+        assertThat(d2).isEqualTo("서구");
+
+    }
+
 }

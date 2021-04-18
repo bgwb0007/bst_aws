@@ -1,0 +1,185 @@
+
+#postSubtitle{
+    height: 130px;
+    width: 100%;
+    background-image: url(../../images/postsubtitle130.png);
+    background-repeat: no-repeat;
+    background-position: 90% 0%;
+    background-color: #03080E;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#postSubtitle .postSubtitle_title{
+    color: white;
+    font-size: 2rem;
+    margin-top: 45px;
+    display: inline-block;
+}
+#postSubtitle .postSubtitle_info{
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 22px;
+    display: none;
+}
+.postSubtitle_mobile{
+    text-align: center;
+    border: 2px solid black;
+    margin: 1rem 1rem;
+    padding-top: 1rem;
+    border-radius: 6px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+@media (min-width: 700px){
+    #postSubtitle{
+        height: 200px;
+        width: 100%;
+        background-image: url(../../images/postsubtitle200.png);
+        background-repeat: no-repeat;
+        background-position: 90% 0%;
+        background-color: #03080E;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    #postSubtitle .postSubtitle_info{
+        font-size: 1.2rem;
+        margin-top: 22px;
+        display: inline-block;
+    }
+    .postBoxAll{
+        width: 620px;
+    }
+}
+
+
+.postForm{
+    border: 2px solid black;
+    margin: 2rem 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    text-align: center;
+}
+.status{
+    margin-bottom: 3rem;
+    display: block;
+    border-bottom: 2px solid;
+    padding-bottom: 0.7rem;
+    margin-right: 2rem;
+}
+.status button{
+    margin-right: 0.2rem;
+}
+
+.postBoxAll{
+    display: inline-block;
+    width: 300px;
+}
+
+@media (min-width: 1000px){
+    .postForm{
+        width: 1000px;
+        margin: 2rem auto;
+    }
+    .postBoxAll{
+        width: 930px;
+    }
+    .postSubtitle_mobile{
+        width: 1000px;
+        margin: 1rem auto;
+    }
+}
+
+.postBoxPlus{
+    background-image: url(../../images/ball.jpg);
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.15);
+    border-radius: 48%;
+    background-size: cover;
+
+    float: left;
+    width: 270px;
+    height: 270px;
+    vertical-align: top;
+    position: relative;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+.postBoxPlus svg{
+    margin-top: 3rem;
+    color: #1B5607;
+}
+
+.postBox{
+    background-image: url(../../images/ball.jpg);
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.15);
+    border-radius: 48%;
+    background-size: cover;
+
+    float: left;
+    width: 270px;
+    height: 270px;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+.postBox a{
+    color: #202F20;
+}
+
+.postBoxStatus{
+    margin-top: 2rem;
+    text-align: center;
+}
+.badge{
+    font-size: 85%;
+}
+.postBoxTitle{
+    margin-top: 0.3rem;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 90%;
+    font-size: 1.5rem;
+    overflow: auto;
+    max-height: 97px;
+}
+
+.postBoxDday{
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.postBoxInfo{
+    margin-top: 1rem;
+    position: absolute;
+    bottom: 8%;
+    left: 14%;
+}
+
+
+
+.footerclass{
+    height: 100px;
+    width: 100%;
+    background-color: #CFD2D0;
+
+}
+
+.footerclassInfo{
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+}
+.footerclassInfo a{
+    color: black;
+    text-decoration: none;
+}
+@media (min-width: 950px) {
+
+    .footerclassInfo{
+        font-size: 1rem;
+    }
+}

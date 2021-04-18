@@ -24,8 +24,6 @@ public class VCountApiController {
         return vCountService.update(id,requestDto);
     }
 
-
-
     @GetMapping("/api/v2/vcount/list")
     public List<VCountListResponseDto> findAllDesc(){
         return vCountService.findAllDesc();
