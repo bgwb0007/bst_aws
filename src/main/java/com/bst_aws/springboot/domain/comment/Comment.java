@@ -33,5 +33,10 @@ public class Comment extends BaseTimeEntity {
         this.userId=userId;
     }
 
+    public void update(Comment entity){
+        this.content = entity.getContent();
+        this.status = entity.getStatus();
+    }
+
 
 }
