@@ -18,8 +18,8 @@ public class CommentListResponseDto {
         this.id = entity.getId();
         this.content = entity.getContent();
         this.createdDate = entity.getCreatedDate();
-        this.postId = entity.getPostId();
+        this.postId = entity.getPost().getId();
         this.status = entity.getStatus();
-        this.userId = getUserId();
+        this.userId = entity.getUser().getId();
     }
 }

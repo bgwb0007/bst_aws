@@ -17,9 +17,9 @@ import java.util.stream.Collectors;
 public class CommentService {
     private final CommentRepository commentRepository;
 
-    @Transactional
+    @Transactional(readOnly = true)
     public List<CommentListResponseDto> findAllAsc(Long postId){
-        return commentRepository.findAllByPostIdOrderByCreatedDateAsc(postId).stream()
+        return commentRepository.findAll().stream()
                 .map(CommentListResponseDto::new)
                 .collect(Collectors.toList());
     }
@@ -27,6 +27,7 @@ public class CommentService {
     public Long save(CommentSaveRequestDto requestDto){
         return commentRepository.save(requestDto.toEntity()).getId();
     }
+
     @Transactional
     public Long update(Long id, CommentUpdateRequestDto requestDto){
         Comment comment = commentRepository.findById(id)

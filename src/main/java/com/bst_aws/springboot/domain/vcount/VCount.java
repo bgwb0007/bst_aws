@@ -35,4 +35,8 @@ public class VCount extends BaseTimeEntity {
         this.count = count;
         return this;
     }
+
+    public void visited_check(){
+        this.count +=1;
+    }
 }

@@ -1,11 +1,16 @@
 package com.bst_aws.springboot.domain.user;
 
 import com.bst_aws.springboot.domain.BaseTimeEntity;
+import com.bst_aws.springboot.domain.comment.Comment;
+import com.bst_aws.springboot.domain.post.Post;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -27,9 +32,16 @@ public class User extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private List<Post> postList;
+
+    @OneToMany(mappedBy = "user")
+    private List<Comment> commentList;
     
     @Builder
-    public User(String name, String email, String picture, Role role){
+    public User(Long id, String name, String email, String picture, Role role){
+        this.id = id;
         this.name = name;
         this.email = email;
         this.picture = picture;

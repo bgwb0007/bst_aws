@@ -16,7 +16,7 @@ public class PostListResponseDto {
     private int hits;
     private String status;
     private String title;
-    private int userId;
+    private Long userId;
     private LocalDateTime createdDate;
 
     public PostListResponseDto(Post entity){
@@ -27,7 +27,7 @@ public class PostListResponseDto {
         this.hits=entity.getHits();
         this.status=entity.getStatus();
         this.title=entity.getTitle();
-        this.userId=entity.getUserId();
+        this.userId=entity.getUser().getId();
         this.createdDate=entity.getCreatedDate();
     }
 

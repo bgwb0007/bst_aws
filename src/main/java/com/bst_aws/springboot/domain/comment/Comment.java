@@ -1,9 +1,13 @@
 package com.bst_aws.springboot.domain.comment;
 
 import com.bst_aws.springboot.domain.BaseTimeEntity;
+import com.bst_aws.springboot.domain.post.Post;
+import com.bst_aws.springboot.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
@@ -21,16 +25,18 @@ public class Comment extends BaseTimeEntity {
 
     private String status;
 
-    private Long postId;
+    @ManyToOne
+    private Post post;
 
-    private Long userId;
+    @ManyToOne
+    private User user;
 
     @Builder
-    public Comment(String content, String status, Long postId, Long userId){
+    public Comment(String content, String status, Post post, User user){
         this.content=content;
         this.status=status;
-        this.postId=postId;
-        this.userId=userId;
+        this.post = post;
+        this.user = user;
     }
 
     public void update(Comment entity){

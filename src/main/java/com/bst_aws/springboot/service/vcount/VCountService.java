@@ -22,7 +22,7 @@ public class VCountService {
 
 
     // 방문기록_ 없으면 생성, 있으면 count +1
-    public VCount saveOrUpdate(VCountSaveRequestDto requestDto) {
+    public Long saveOrUpdate(VCountSaveRequestDto requestDto) {
         VCount vCount;
         if (vCountRepository.existsByVisitedDateContainingAndUserEmail(LocalDate.now().toString(),requestDto.getUserEmail())){
             vCount = vCountRepository.findByVisitedDateAndUserEmail(LocalDate.now().toString(), requestDto.getUserEmail())
@@ -31,12 +31,8 @@ public class VCountService {
         }else {
             vCount = requestDto.toEntity();
         }
-
-
-        return vCountRepository.save(vCount);
+        return vCountRepository.save(vCount).getId();
     }
-
-
 
     //save
     public Long save(VCountSaveRequestDto requestDto){
