@@ -103,11 +103,10 @@ public class VCountRepositoryTest {
                 .userEmail(userEmail)
                 .build());
 
-
         VCountSaveRequestDto requestDto = new VCountSaveRequestDto(dDay,null,1);
 
         //saveOrUpdate
-        VCount vCount = vCountRepository.findByVisitedDateAndUserEmail(visitedDate, null)
+        VCount vCount = vCountRepository.findByVisitedDateContainingAndUserEmail(visitedDate, null)
                 .map(entity -> entity.update(entity.getCount()+1))
                 .orElse(requestDto.toEntity());
 
@@ -117,9 +116,5 @@ public class VCountRepositoryTest {
         //then
         assertThat(vCount_test.getCount()).isEqualTo(1);
 
-
     }
-
-
-
 }

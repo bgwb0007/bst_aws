@@ -15,6 +15,9 @@ public class PostSaveRequestDto {
     private String dDay;
     private String district;
     private String title;
+    // hits 와 status 는 자동으로 값 입력
+    private int hits;
+    private String status;
     private User user;
 
     @Builder
@@ -25,6 +28,8 @@ public class PostSaveRequestDto {
         this.dDay = dDay;
         this.district = district;
         this.title = title;
+        this.hits = 1;
+        this.status = "on";
         this.user = user;
     }
     public Post toEntity(){
@@ -35,6 +40,8 @@ public class PostSaveRequestDto {
                 .district(district)
                 .title(title)
                 .user(user)
+                .hits(hits)
+                .status(status)
                 .build();
     }
 

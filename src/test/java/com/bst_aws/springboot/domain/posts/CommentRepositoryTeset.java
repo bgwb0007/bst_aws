@@ -61,6 +61,7 @@ public class CommentRepositoryTeset {
     public void cleanup(){
         commentRepository.deleteAll();
     }
+
     @Test
     public void 댓글저장_불러오기(){
         //given
@@ -77,7 +78,6 @@ public class CommentRepositoryTeset {
                 .user(user)
                 .build());
 
-
         //when
         List<Comment> commentList = commentRepository.findAll();
 
@@ -87,5 +87,4 @@ public class CommentRepositoryTeset {
         assertThat(comment.getUser().getId()).isEqualTo(user.getId());
         assertThat(comment.getPost().getId()).isEqualTo(post.getId());
     }
-
 }

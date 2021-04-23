@@ -1,19 +1,37 @@
 package com.bst_aws.springboot.web;
 
+import com.bst_aws.springboot.domain.post.Post;
 import com.bst_aws.springboot.domain.post.PostRepository;
+import com.bst_aws.springboot.domain.user.Role;
+import com.bst_aws.springboot.domain.user.User;
+import com.bst_aws.springboot.domain.user.UserRepository;
+import com.bst_aws.springboot.web.dto.request.PostSaveRequestDtoFront;
+import com.bst_aws.springboot.web.dto.request.PostUpdateRequestDto;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.time.LocalDate;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -27,10 +45,12 @@ public class PostApiControllerTest {
 
     @Autowired
     private PostRepository postRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private WebApplicationContext context;
-
+    
     private MockMvc mvc;
 
     @Before
@@ -39,6 +59,26 @@ public class PostApiControllerTest {
                 .webAppContextSetup(context)
                 .apply(springSecurity())
                 .build();
+
+        User user = User.builder()
+                .email("kkk@naver.com")
+                .name("서형이")
+                .picture("ass")
+                .role(Role.USER)
+                .build();
+        userRepository.save(user);
+
+        Post post = Post.builder()
+                .user(userRepository.getOne(1L))
+                .hits(1)
+                .status("on")
+                .dDay(LocalDate.now().toString())
+                .district("사상구")
+                .content("상대구함")
+                .title("오늘칠사람")
+                .createdBy("서형이_createdBy")
+                .build();
+        postRepository.save(post);
     }
 
     @After
@@ -46,18 +86,19 @@ public class PostApiControllerTest {
         postRepository.deleteAll();
     }
 
-    /*@Test
+    @Test
     @WithMockUser(roles="USER")
     public void Post_등록() throws Exception {
         //given
         String title = "title";
         String content = "content";
         String district = "해운대구";
-        Long userId = 3L;
         String createdBy = "user1";
         String dDay = LocalDate.of(2021, 04, 12).toString();
+        Long userId = 1L;
 
-        PostSaveRequestDto requestDto = PostSaveRequestDto.builder()
+
+        PostSaveRequestDtoFront requestDtoFront = PostSaveRequestDtoFront.builder()
                 .title(title)
                 .content(content)
                 .district(district)
@@ -69,13 +110,14 @@ public class PostApiControllerTest {
         String url = "http://localhost:" + port + "/api/v2/post";
 
         //when
+
         mvc.perform(post(url)
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(new ObjectMapper().writeValueAsString(requestDto)))
+                .content(new ObjectMapper().writeValueAsString(requestDtoFront)))
                 .andExpect(status().isOk());
 
         //then
-        List<Post> all = postRepository.findAll();
+        List<Post> all = postRepository.findAllOrderByCreatedDateDesc();
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(LocalDate.from(all.get(0).getCreatedDate())).isAfter(LocalDate.parse(dDay));
     }
@@ -85,31 +127,23 @@ public class PostApiControllerTest {
     @WithMockUser(roles="USER")
     public void Post_수정() throws Exception {
         //given
-        String title = "title";
-        String content = "content";
-        String district = "해운대구";
-        Long userId = 3L;
-        String createdBy = "user1";
-        String dDay = LocalDate.of(2021,04,13).toString();
-        Post savedPost = postRepository.save(Post.builder()
-                .title(title)
-                .content(content)
-                .district(district)
-                .user(userId)
-                .createdBy(createdBy)
-                .dDay(dDay)
-                .build());
 
-        Long updateId = savedPost.getId();
-        String expectedTitle = "title2";
-        String expectedContent = "content2";
+        Long postId = 1L;
+        String content = "수정된 글";
+        String dDay = LocalDate.of(2021,04,22).toString();
+        String district = "수영구";
+        String status = "on";
+        String title = "수정된 제목";
 
         PostUpdateRequestDto requestDto = PostUpdateRequestDto.builder()
-                .title(expectedTitle)
-                .content(expectedContent)
+                .content(content)
+                .dDay(dDay)
+                .district(district)
+                .status(status)
+                .title(title)
                 .build();
 
-        String url = "http://localhost:" + port + "/api/v2/post/" + updateId;
+        String url = "http://localhost:" + port + "/api/v2/post/" + postId;
 
         //when
         mvc.perform(put(url)
@@ -119,9 +153,9 @@ public class PostApiControllerTest {
 
         //then
         List<Post> all = postRepository.findAll();
-        assertThat(all.get(0).getTitle()).isEqualTo(expectedTitle);
-        assertThat(all.get(0).getContent()).isEqualTo(expectedContent);
-    }*/
-
+        assertThat(all.get(0).getTitle()).isEqualTo(title);
+        assertThat(all.get(0).getUser().getName()).isEqualTo("서형이");
+        assertThat(all.get(0).getId()).isEqualTo(postId);
+    }
 
 }

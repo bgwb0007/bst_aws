@@ -15,7 +15,7 @@ public interface VCountRepository extends JpaRepository<VCount, Long> {
     @Query("SELECT vc from VCount vc order by vc.createdDate desc")
     List<VCount> findAllDesc();
 
-    Optional<VCount> findByVisitedDateAndUserEmail(String visitedDate, String userEmail);
+    Optional<VCount> findByVisitedDateContainingAndUserEmail(String visitedDate, String userEmail);
 
     // 오늘 방문기록이 이미 있는지 확인 >> 있으면 카운트만 +1할거임
     Boolean existsByVisitedDateContainingAndUserEmail(String visitedDate, String userEmail);

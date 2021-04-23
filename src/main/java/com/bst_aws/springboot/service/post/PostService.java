@@ -60,14 +60,11 @@ public class PostService {
         return new PostResponseDto(post);
     }
 
-
     @Transactional(readOnly = true)
     public List<PostListResponseDto> findAllDesc(){
-        return postRepository.findAllDesc().stream()
+        return postRepository.findAllOrderByCreatedDateDesc().stream()
                 .map(PostListResponseDto::new)
                 .collect(Collectors.toList());
     }
-
-
 
 }

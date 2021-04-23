@@ -25,7 +25,7 @@ public class VCountService {
     public Long saveOrUpdate(VCountSaveRequestDto requestDto) {
         VCount vCount;
         if (vCountRepository.existsByVisitedDateContainingAndUserEmail(LocalDate.now().toString(),requestDto.getUserEmail())){
-            vCount = vCountRepository.findByVisitedDateAndUserEmail(LocalDate.now().toString(), requestDto.getUserEmail())
+            vCount = vCountRepository.findByVisitedDateContainingAndUserEmail(LocalDate.now().toString(), requestDto.getUserEmail())
                     .map(entity -> entity.update(entity.getCount()+1))
                     .orElse(requestDto.toEntity());
         }else {
