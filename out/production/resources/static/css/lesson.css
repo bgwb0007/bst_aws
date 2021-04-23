@@ -16,7 +16,7 @@
       #lessonSubtitle{
         height: 130px;
         width: 100%;
-        background-image: url(../../images/lessonSubtitle130.jpg);
+        background-image: url("/image/lessonSubtitle130.jpg");
         background-repeat: no-repeat;
         background-position: 10% 0%;
         background-color: #030403;
@@ -49,7 +49,7 @@
         #lessonSubtitle{
         height: 200px;
         width: 100%;
-        background-image: url(../../images/lessonSubtitle200.jpg);
+        background-image: url("/image/lessonSubtitle200.jpg");
         background-repeat: no-repeat;
         background-position: 10% 0%;
         background-color: #030403;
@@ -76,7 +76,7 @@
 
 
       .lessonTitle{
-        background-image: url(../../images/racket64.png);
+        background-image: url("/image/racket64.png");
         background-repeat: no-repeat;
         background-position: 95% -100%;
 

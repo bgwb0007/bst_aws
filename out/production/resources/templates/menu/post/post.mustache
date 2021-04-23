@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/post.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body>
+
+{{>layout/nav_bar}}
+
+<article>
+
+    <div id="postSubtitle">
+        <div height="100%">
+            <span class="postSubtitle_title">운동 상대 매칭</span><br>
+            <span class="postSubtitle_info">다양한 사람들과 테니스를 칠 수 있습니다. 모집글을 등록하세요.</span>
+        </div>
+    </div>
+
+    <div class="postSubtitle_mobile">
+        <p>테니스 상대가 없어 고민하지마세요.<br>
+            부산지역의 다양한 사람들과 테니스를 즐길 수 있습니다.<br>
+            지금 바로 모집글을 등록하세요!</p>
+    </div>
+
+    <div class="postForm">
+        <div class="status">
+            <div class="status_group btn-group btn-group-lg" role="group">
+                <a href="#" class="btn btn-secondary bg-success">모집중</a>
+                <a href="#" class="btn btn-secondary bg-success">종료</a>
+                <a href="/post/save" class="btn btn-secondary bg-info">새 글쓰기</a>
+            </div>
+        </div>
+
+        <div class="postBoxAll">
+            <div class="postBoxPlus">
+                <a href="/post/save"><svg width="10em" height="10em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/></svg></a>
+            </div>
+
+
+            {{#posts}}
+            <div class="postBox">
+                <a href="#">
+                    <div class="postBoxStatus">
+                        <span class="badge badge-danger">D-##dDay</span>
+                    </div>
+                    <div class="postBoxTitle"><b>{{title}}</b></div>
+                    <div class="postBoxDday">경기날짜 ##dDay</div>
+                    <div class="postBoxInfo"><span>작성일  {{createdDate}}</span><br>
+                        <span>{{createdBy}}</span>
+                        <span> | 조회 {{hits}}</span>
+                    </div>
+                </a>
+            </div>
+            {{/posts}}
+            <div style="clear: left"></div>
+        </div>
+
+    </div>
+
+
+
+</article>
+
+
+
+{{>layout/footer_new}}
+
+</body>
+</html>

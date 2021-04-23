@@ -4,7 +4,6 @@ import com.bst_aws.springboot.domain.comment.Comment;
 import com.bst_aws.springboot.domain.comment.CommentRepository;
 import com.bst_aws.springboot.web.dto.request.CommentSaveRequestDto;
 import com.bst_aws.springboot.web.dto.request.CommentUpdateRequestDto;
-import com.bst_aws.springboot.web.dto.response.CommentListResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,12 +16,12 @@ import java.util.stream.Collectors;
 public class CommentService {
     private final CommentRepository commentRepository;
 
-    @Transactional(readOnly = true)
-    public List<CommentListResponseDto> findAllAsc(Long postId){
+/*    @Transactional(readOnly = true)
+    public List<CommentListResponseDto> findAllByPostId(Long postId){
         return commentRepository.findAll().stream()
                 .map(CommentListResponseDto::new)
                 .collect(Collectors.toList());
-    }
+    }*/
     @Transactional
     public Long save(CommentSaveRequestDto requestDto){
         return commentRepository.save(requestDto.toEntity()).getId();

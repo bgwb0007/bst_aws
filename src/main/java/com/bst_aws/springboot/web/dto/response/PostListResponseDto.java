@@ -17,7 +17,7 @@ public class PostListResponseDto {
     private String status;
     private String title;
     private Long userId;
-    private LocalDateTime createdDate;
+    private String createdDate;
 
     public PostListResponseDto(Post entity){
         this.id = entity.getId();
@@ -28,7 +28,8 @@ public class PostListResponseDto {
         this.status=entity.getStatus();
         this.title=entity.getTitle();
         this.userId=entity.getUser().getId();
-        this.createdDate=entity.getCreatedDate();
+        String temp =entity.getCreatedDate().toString();
+        this.createdDate= temp.substring(2,10) + "   " + temp.substring(11,13) + "시 " + temp.substring(14,16) + "분";
     }
 
 }

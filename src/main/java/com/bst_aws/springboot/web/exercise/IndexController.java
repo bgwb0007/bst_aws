@@ -3,11 +3,14 @@ package com.bst_aws.springboot.web.exercise;
 
 import com.bst_aws.springboot.config.auth.LoginUser;
 import com.bst_aws.springboot.config.auth.dto.SessionUser;
+import com.bst_aws.springboot.service.court.CourtService;
 import com.bst_aws.springboot.service.lesson.LessonService;
+import com.bst_aws.springboot.service.post.PostService;
 import com.bst_aws.springboot.service.posts.PostsService;
 import com.bst_aws.springboot.service.vcount.VCountService;
 import com.bst_aws.springboot.web.dto.exercise.PostsResponseDto;
 import com.bst_aws.springboot.web.dto.request.VCountSaveRequestDto;
+import com.bst_aws.springboot.web.dto.response.PostResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +26,10 @@ public class IndexController {
 
     private final PostsService postsService;
     private final LessonService lessonService;
+    private final PostService postService;
+    private final CourtService courtService;
+    private final VCountService vCountService;
+
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
@@ -31,6 +38,12 @@ public class IndexController {
             model.addAttribute("userName", user.getName());
             userEmail = user.getEmail();
         }
+        vCountService.saveOrUpdate(
+                VCountSaveRequestDto.builder()
+                .count(1)
+                .visitedDate(LocalDate.now().toString())
+                .userEmail(userEmail)
+                .build());
 
         return "index";
     }
@@ -51,16 +64,44 @@ public class IndexController {
 
         return "posts-update";
     }
+
     @GetMapping("/test")
     public String test() {
         return "new_index";
     }
+    @GetMapping("/court")
+    public String court(Model model) {
+        model.addAttribute("courts", courtService.findAllAsc());
+        return "menu/court/court";
+    }
     @GetMapping("/lesson")
     public String lesson(Model model) {
         model.addAttribute("lessons", lessonService.findAllAsc());
-
         return "menu/lesson/lesson";
     }
 
+    @GetMapping("/post")
+    public String post(Model model) {
+        model.addAttribute("posts", postService.findAllDesc());
+        return "menu/post/post";
+    }
 
-}
+    @GetMapping("/post/save")
+    public String postSave(Model model, @LoginUser SessionUser user) {
+        if (user != null) {
+            model.addAttribute("user", user);
+            return "menu/post/post-save";
+        }
+        return "menu/post/post";
+    }
+    @GetMapping("/post/{id}")
+    public String postDetail(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
+        PostResponseDto dto = postService.findById(id);
+        model.addAttribute("post", dto);
+        model.addAttribute("user",user);
+
+        return "menu/post/post-detail";
+    }
+
+
+    }

@@ -26,12 +26,12 @@ public class PostService {
     public Long save(PostSaveRequestDtoFront requestDtoFront){
 
         PostSaveRequestDto requestDto = PostSaveRequestDto.builder()
-                .user(userRepository.getOne(requestDtoFront.getUserId()))
                 .content(requestDtoFront.getContent())
                 .createdBy(requestDtoFront.getCreatedBy())
                 .dDay(requestDtoFront.getDDay())
                 .district(requestDtoFront.getDistrict())
                 .title(requestDtoFront.getTitle())
+                .user(userRepository.getOne(requestDtoFront.getUserId()))
                 .build();
 
         return postRepository.save(requestDto.toEntity()).getId();

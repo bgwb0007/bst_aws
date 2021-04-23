@@ -23,7 +23,7 @@ public class PostSaveRequestDtoFront {
         this.dDay=dDay;
         this.district=district;
         this.title=title;
-        this.userId=userId;
+        this.userId = userId;
     }
 
 }

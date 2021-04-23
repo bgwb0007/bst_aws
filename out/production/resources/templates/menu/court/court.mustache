@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/court.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    {{>menu/court/court_meta}}
+
+</head>
+<body>
+
+{{>layout/nav_bar}}
+
+<article>
+    <!-- 지도 -->
+    <div id="map_box">
+        <div class="folium-map" id="map_2ed44e62d96049a697081065fe21db36">
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 1rem 1rem;">
+        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfSbL__ghROGKvtxgCRTl8wcEmBNYxd4viihaKcpySVWYosoQ/viewform?usp=sf_link" target="_blank">테니스코트 정보를 공유해주세요!</a></p>
+    </div>
+
+
+    <div>
+        <div class="container">
+            <div class="lessonDistrict">
+            </div>
+            <div class="row">
+                {{#courts}}
+                    <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+                        <div class="lessonBox">
+                            <a href="#">
+                                <div class="lessonTitle">
+                                    <p>{{name}}</p>
+                                </div></a>
+                            <div id="lessonDetail" style="display: none;" class="lessonDetail">
+                                <div class="lessonDetail_titles">주소</div>
+                                <div class="lessonDetail_infos">{{address}}</div>
+                                <div class="lessonDetail_titles">web</div>
+                                <a href="#" target="_blank"><div class="lessonDetail_infos">{{web}}</div></a>
+                                <div class="lessonDetail_titles">안내</div>
+                                <div class="lessonDetail_infos">{{info}}</div>
+                            </div>
+                        </div>
+                    </div>
+                {{/courts}}
+            </div>
+        </div>
+    </div>
+
+
+</article>
+<aside>
+    <div id="AD1">
+        <div></div>
+    </div>
+</aside>
+
+{{>menu/court/court_map_script}}
+
+{{>layout/footer_new}}
+
+</body>
+</html>

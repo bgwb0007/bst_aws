@@ -1,8 +1,8 @@
-
+. {}
 #postSubtitle{
     height: 130px;
     width: 100%;
-    background-image: url(../../images/postsubtitle130.png);
+    background-image: url("/image/postsubtitle130.png");
     background-repeat: no-repeat;
     background-position: 90% 0%;
     background-color: #03080E;
@@ -35,7 +35,7 @@
     #postSubtitle{
         height: 200px;
         width: 100%;
-        background-image: url(../../images/postsubtitle200.png);
+        background-image: url("/image/postsubtitle200.png");
         background-repeat: no-repeat;
         background-position: 90% 0%;
         background-color: #03080E;
@@ -92,7 +92,7 @@
 }
 
 .postBoxPlus{
-    background-image: url(../../images/ball.jpg);
+    background-image: url("/image/ball.jpg");
     box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.15);
     border-radius: 48%;
     background-size: cover;
@@ -111,7 +111,7 @@
 }
 
 .postBox{
-    background-image: url(../../images/ball.jpg);
+    background-image: url("/image/ball.jpg");
     box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.15);
     border-radius: 48%;
     background-size: cover;

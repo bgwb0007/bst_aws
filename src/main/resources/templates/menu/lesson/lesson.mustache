@@ -8,19 +8,34 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    {{>menu/lesson/lesson_meta}}
+
 </head>
 <body>
 
 {{>layout/nav_bar}}
 
 <article>
+    <!-- 지도 -->
+    <div id="map_box">
+        <div class="folium-map" id="map_6a7bd364c6484754b2a99d3aab02c4b6">
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 1rem 1rem;">
+        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfSbL__ghROGKvtxgCRTl8wcEmBNYxd4viihaKcpySVWYosoQ/viewform?usp=sf_link" target="_blank">테니스레슨 정보를 공유해주세요!</a></p>
+    </div>
+
+
+
     <div>
         <div class="container">
             <div class="lessonDistrict">
             </div>
             <div class="row">
+                {{#lessons}}
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4">
-                    {{#lessons}}
                     <div class="lessonBox">
                         <a href="#">
                             <div class="lessonTitle">
@@ -35,8 +50,8 @@
                             <div class="lessonDetail_infos">{{info}}</div>
                         </div>
                     </div>
-                    {{/lessons}}
                 </div>
+                {{/lessons}}
             </div>
         </div>
     </div>
@@ -49,7 +64,7 @@
     </div>
 </aside>
 
-
+{{>menu/lesson/lesson_map_script}}
 
 {{>layout/footer_new}}
 
