@@ -22,6 +22,34 @@
             margin: 2rem 0.7rem;
             padding: 1rem 1rem;
         }
+
+        .postCreate .del{
+            margin-left: auto;
+            margin-right: 1rem;
+
+        }
+        .commentBox{
+            margin-top: 2rem;
+            border-top: 1px solid #C3D2BE;
+            padding-top: 1rem;
+        }
+        .commentBox a{
+            margin-left: auto;
+            margin-right: 1rem;
+        }
+
+        .commentCreate{
+            height: 100px;
+        }
+
+        .commentBtn{
+            margin-top: 0.3rem;
+        }
+
+        .commentTable th{
+            width: 20%;
+        }
+
     </style>
 </head>
 <body>
@@ -66,6 +94,33 @@
             <button type="button" class="btn btn-primary" id="btn-post-update">수정하기</button>
         </form>
     </div>
+
+    <div class="commentBox">
+        <form>
+            <div class="form-group row">
+                <div class="col-12">
+                    <textarea class="form-control" id="inputInfo" rows="4" placeholder="댓글을 입력해주세요." name="content">
+                    </textarea>
+                </div>
+                <button type="button" class="btn btn-success commentBtn">입력</button>
+            </div>
+            <input type="hidden" name="postId" value="{{post.id}}">
+            <input type="hidden" name="commentWriter" value="{{user.id}}">
+        </form>
+    </div>
+
+    <table class="commentTable table">
+        <tbody>
+        {{#comments}}
+        <tr class="table-info">
+            <th scope="row">{{comment.name}}<br>{{comment.createdDate}}</th>
+            <td colspan="2">{{commnet.content}}</td>
+        </tr>
+        {{/comments}}
+        </tbody>
+    </table>
+
+
 </article>
 
 <script src="/js/app/post.js"></script>
