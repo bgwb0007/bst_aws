@@ -12,7 +12,7 @@ public class CommentListResponseDto {
     private LocalDateTime createdDate;
     private Long postId;
     private String status;
-    private Long userId;
+    private String writer;
 
     public CommentListResponseDto(Comment entity){
         this.id = entity.getId();
@@ -20,6 +20,6 @@ public class CommentListResponseDto {
         this.createdDate = entity.getCreatedDate();
         this.postId = entity.getPost().getId();
         this.status = entity.getStatus();
-        this.userId = entity.getUser().getId();
+        this.writer = entity.getUser().getName();
     }
 }

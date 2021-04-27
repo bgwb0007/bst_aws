@@ -2,6 +2,7 @@ package com.bst_aws.springboot.web.controller;
 
 import com.bst_aws.springboot.service.comment.CommentService;
 import com.bst_aws.springboot.web.dto.request.CommentSaveRequestDto;
+import com.bst_aws.springboot.web.dto.request.CommentSaveRequestDtoFront;
 import com.bst_aws.springboot.web.dto.request.CommentUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +20,8 @@ public class CommentApiController {
         return commentService.findAllByPostId(postId);
     }*/
     @PostMapping("/api/v2/comment")
-    public Long save(@RequestBody CommentSaveRequestDto requestDto){
-        return commentService.save(requestDto);
+    public Long save(@RequestBody CommentSaveRequestDtoFront requestDtoFront){
+        return commentService.save(requestDtoFront);
     }
 
     @PutMapping("/api/v2/comment/{id}")

@@ -95,17 +95,16 @@
         </form>
     </div>
 
-    <div class="commentBox">
+    <div class="commentBox container">
         <form>
             <div class="form-group row">
                 <div class="col-12">
-                    <textarea class="form-control" id="inputInfo" rows="4" placeholder="댓글을 입력해주세요." name="content">
-                    </textarea>
+                    <textarea class="form-control" id="inputInfo" rows="4" placeholder="댓글을 입력해주세요." name="content"></textarea>
                 </div>
-                <button type="button" class="btn btn-success commentBtn">입력</button>
+                <button type="button" class="btn btn-success commentBtn" id="btn-comment-save">입력</button>
             </div>
-            <input type="hidden" name="postId" value="{{post.id}}">
-            <input type="hidden" name="commentWriter" value="{{user.id}}">
+            <input type="hidden" id = "postId" name="postId" value="{{post.id}}">
+            <input type="hidden" id = "commentWriter" name="commentWriter" value="{{user.id}}">
         </form>
     </div>
 
@@ -113,8 +112,8 @@
         <tbody>
         {{#comments}}
         <tr class="table-info">
-            <th scope="row">{{comment.name}}<br>{{comment.createdDate}}</th>
-            <td colspan="2">{{commnet.content}}</td>
+            <th scope="row">{{writer}}<br>{{createdDate}}</th>
+            <td colspan="2">{{content}}</td>
         </tr>
         {{/comments}}
         </tbody>
@@ -123,6 +122,6 @@
 
 </article>
 
-<script src="/js/app/post.js"></script>
+<script src="/js/app/post_detail.js"></script>
 
 {{>layout/footer}}

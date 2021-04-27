@@ -3,6 +3,7 @@ package com.bst_aws.springboot.web.exercise;
 
 import com.bst_aws.springboot.config.auth.LoginUser;
 import com.bst_aws.springboot.config.auth.dto.SessionUser;
+import com.bst_aws.springboot.service.comment.CommentService;
 import com.bst_aws.springboot.service.court.CourtService;
 import com.bst_aws.springboot.service.lesson.LessonService;
 import com.bst_aws.springboot.service.post.PostService;
@@ -10,6 +11,7 @@ import com.bst_aws.springboot.service.posts.PostsService;
 import com.bst_aws.springboot.service.vcount.VCountService;
 import com.bst_aws.springboot.web.dto.exercise.PostsResponseDto;
 import com.bst_aws.springboot.web.dto.request.VCountSaveRequestDto;
+import com.bst_aws.springboot.web.dto.response.CommentListResponseDto;
 import com.bst_aws.springboot.web.dto.response.PostResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -29,6 +31,7 @@ public class IndexController {
     private final PostService postService;
     private final CourtService courtService;
     private final VCountService vCountService;
+    private final CommentService commentService;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
@@ -38,12 +41,12 @@ public class IndexController {
             model.addAttribute("userName", user.getName());
             userEmail = user.getEmail();
         }
-        vCountService.saveOrUpdate(
+        /*vCountService.saveOrUpdate(
                 VCountSaveRequestDto.builder()
                 .count(1)
                 .visitedDate(LocalDate.now().toString())
                 .userEmail(userEmail)
-                .build());
+                .build());*/
 
         return "index";
     }
@@ -96,9 +99,10 @@ public class IndexController {
     }
     @GetMapping("/post/{id}")
     public String postDetail(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
-        PostResponseDto dto = postService.findById(id);
-        model.addAttribute("post", dto);
+        model.addAttribute("post", postService.findById(id));
         model.addAttribute("user",user);
+        model.addAttribute("comments",commentService.findAllByPostId(id));
+
 
         return "menu/post/post-detail";
     }

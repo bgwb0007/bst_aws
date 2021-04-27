@@ -2,8 +2,12 @@ package com.bst_aws.springboot.service.comment;
 
 import com.bst_aws.springboot.domain.comment.Comment;
 import com.bst_aws.springboot.domain.comment.CommentRepository;
+import com.bst_aws.springboot.domain.post.PostRepository;
+import com.bst_aws.springboot.domain.user.UserRepository;
 import com.bst_aws.springboot.web.dto.request.CommentSaveRequestDto;
+import com.bst_aws.springboot.web.dto.request.CommentSaveRequestDtoFront;
 import com.bst_aws.springboot.web.dto.request.CommentUpdateRequestDto;
+import com.bst_aws.springboot.web.dto.response.CommentListResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,15 +19,26 @@ import java.util.stream.Collectors;
 @Service
 public class CommentService {
     private final CommentRepository commentRepository;
+    private final PostRepository postRepository;
+    private final UserRepository userRepository;
 
-/*    @Transactional(readOnly = true)
+    @Transactional(readOnly = true)
     public List<CommentListResponseDto> findAllByPostId(Long postId){
-        return commentRepository.findAll().stream()
+        return commentRepository.findAllByPostIdOrderByCreatedDateAsc(postId).stream()
                 .map(CommentListResponseDto::new)
                 .collect(Collectors.toList());
-    }*/
+    }
+
+
     @Transactional
-    public Long save(CommentSaveRequestDto requestDto){
+    public Long save(CommentSaveRequestDtoFront requestDtoFront){
+        CommentSaveRequestDto requestDto = CommentSaveRequestDto.builder()
+                .content(requestDtoFront.getContent())
+                .status(requestDtoFront.getStatus())
+                .post(postRepository.getOne(requestDtoFront.getPostId()))
+                .user(userRepository.getOne(requestDtoFront.getUserId()))
+                .build();
+
         return commentRepository.save(requestDto.toEntity()).getId();
     }
 
