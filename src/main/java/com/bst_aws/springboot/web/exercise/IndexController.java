@@ -97,15 +97,25 @@ public class IndexController {
         }
         return "menu/post/post";
     }
+
     @GetMapping("/post/{id}")
     public String postDetail(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
         model.addAttribute("post", postService.findById(id));
         model.addAttribute("user",user);
         model.addAttribute("comments",commentService.findAllByPostId(id));
-
-
+        if (postService.isMyPost(id, user.getId())) {
+            model.addAttribute("myPost", "myPost");
+        }
         return "menu/post/post-detail";
     }
 
-
+    @GetMapping("/post/update/{id}")
+    public String postUpdate(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
+        model.addAttribute("post", postService.findById(id));
+        model.addAttribute("user",user);
+        return "menu/post/post-update";
     }
+
+
+
+}

@@ -21,6 +21,10 @@ public class PostService {
     private final PostRepository postRepository;
     private final UserRepository userRepository;
 
+    @Transactional
+    public boolean isMyPost(Long postId, Long userId){
+        return postRepository.getOne(postId).getUser().getId().equals(userId);
+    }
 
     @Transactional
     public Long save(PostSaveRequestDtoFront requestDtoFront){

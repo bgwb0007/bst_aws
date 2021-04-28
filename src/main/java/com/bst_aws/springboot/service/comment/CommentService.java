@@ -22,6 +22,7 @@ public class CommentService {
     private final PostRepository postRepository;
     private final UserRepository userRepository;
 
+
     @Transactional(readOnly = true)
     public List<CommentListResponseDto> findAllByPostId(Long postId){
         return commentRepository.findAllByPostIdOrderByCreatedDateAsc(postId).stream()

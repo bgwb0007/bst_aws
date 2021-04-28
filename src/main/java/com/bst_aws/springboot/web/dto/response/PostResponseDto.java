@@ -14,6 +14,7 @@ public class PostResponseDto {
     private String status;
     private String title;
     private Long userId;
+    private String userName;
 
     @Builder
     public PostResponseDto(Post entity){
@@ -25,6 +26,7 @@ public class PostResponseDto {
         this.status=entity.getStatus();
         this.title=entity.getTitle();
         this.userId= entity.getUser().getId();
+        this.userName= entity.getUser().getName();
     }
 
 
