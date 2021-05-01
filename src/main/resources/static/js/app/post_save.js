@@ -37,15 +37,18 @@ var main = {
     },
     update : function () {
         var data = {
-            title: $('#title').val(),
-            content: $('#content').val()
+            content: $('#content').val(),
+            createdBy : $('#createdBy').val(),
+            dDay : $('#dDay').val(),
+            district : $('#district').val(),
+            title : $('#title').val()
         };
 
         var id = $('#id').val();
 
         $.ajax({
             type: 'PUT',
-            url: '/api/v1/posts/'+id,
+            url: '/api/v2/post/'+id,
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
@@ -61,7 +64,7 @@ var main = {
 
         $.ajax({
             type: 'DELETE',
-            url: '/api/v1/posts/'+id,
+            url: '/api/v2/post/'+id,
             dataType: 'json',
             contentType:'application/json; charset=utf-8'
         }).done(function() {

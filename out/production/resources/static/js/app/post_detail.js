@@ -5,13 +5,10 @@ var main = {
             _this.save();
         });
 
-        $('#btn-update').on('click', function () {
+        $('#btn-comment-update').on('click', function () {
             _this.update();
         });
 
-        $('#btn-delete').on('click', function () {
-            _this.delete();
-        });
     },
     save : function () {
         var postId = $('#postId').val().toString();
