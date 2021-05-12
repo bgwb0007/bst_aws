@@ -5,7 +5,6 @@ import com.bst_aws.springboot.domain.post.PostRepository;
 import com.bst_aws.springboot.domain.user.Role;
 import com.bst_aws.springboot.domain.user.User;
 import com.bst_aws.springboot.domain.user.UserRepository;
-import javafx.geometry.Pos;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,8 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
