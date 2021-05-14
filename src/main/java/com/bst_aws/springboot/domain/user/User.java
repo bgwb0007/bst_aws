@@ -3,6 +3,7 @@ package com.bst_aws.springboot.domain.user;
 import com.bst_aws.springboot.domain.BaseTimeEntity;
 import com.bst_aws.springboot.domain.comment.Comment;
 import com.bst_aws.springboot.domain.post.Post;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,10 +34,12 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private Role role;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @JsonManagedReference
     private List<Post> postList;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @JsonManagedReference
     private List<Comment> commentList;
     
     @Builder

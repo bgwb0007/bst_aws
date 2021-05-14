@@ -3,6 +3,7 @@ package com.bst_aws.springboot.domain.comment;
 import com.bst_aws.springboot.domain.BaseTimeEntity;
 import com.bst_aws.springboot.domain.post.Post;
 import com.bst_aws.springboot.domain.user.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,10 +26,14 @@ public class Comment extends BaseTimeEntity {
 
     private String status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "POST_ID")
+    @JsonBackReference
     private Post post;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    @JsonBackReference
     private User user;
 
     @Builder

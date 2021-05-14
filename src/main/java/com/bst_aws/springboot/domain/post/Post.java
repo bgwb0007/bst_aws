@@ -3,6 +3,7 @@ package com.bst_aws.springboot.domain.post;
 import com.bst_aws.springboot.domain.BaseTimeEntity;
 import com.bst_aws.springboot.domain.comment.Comment;
 import com.bst_aws.springboot.domain.user.User;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,11 +41,12 @@ public class Post extends BaseTimeEntity {
     private User user;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "post")
+    @JsonManagedReference
     private List<Comment> commentList;
 
     @Builder
     public Post(String content, String createdBy, String dDay, String district, int hits,
-                String status, String title, User user, List<Comment> commentList){
+                String status, String title, User user){
         this.content = content;
         this.createdBy = createdBy;
         this.dDay = dDay;
@@ -53,7 +55,6 @@ public class Post extends BaseTimeEntity {
         this.status = status;
         this.title = title;
         this.user = user;
-        this.commentList = commentList;
     }
 
     public void update(Post entity){

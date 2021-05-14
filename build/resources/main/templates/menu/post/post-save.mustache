@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+    <script src="bootstrap-datepicker.kr.js" charset="UTF-8"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+
+        ( function( factory ) {
+            if ( typeof define === "function" && define.amd ) {
+
+                // AMD. Register as an anonymous module.
+                define( [ "../widgets/datepicker" ], factory );
+            } else {
+
+                // Browser globals
+                factory( jQuery.datepicker );
+            }
+        }( function( datepicker ) {
+
+            datepicker.regional.ko = {
+                closeText: "닫기",
+                prevText: "이전달",
+                nextText: "다음달",
+                currentText: "오늘",
+                monthNames: [ "1월","2월","3월","4월","5월","6월",
+                    "7월","8월","9월","10월","11월","12월" ],
+                monthNamesShort: [ "1월","2월","3월","4월","5월","6월",
+                    "7월","8월","9월","10월","11월","12월" ],
+                dayNames: [ "일요일","월요일","화요일","수요일","목요일","금요일","토요일" ],
+                dayNamesShort: [ "일","월","화","수","목","금","토" ],
+                dayNamesMin: [ "일","월","화","수","목","금","토" ],
+                weekHeader: "주",
+                dateFormat: "yy-mm-dd",
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: true,
+                yearSuffix: "년" };
+            datepicker.setDefaults( datepicker.regional.ko );
+
+            return datepicker.regional.ko;
+        } ) );
+    </script>
+
+    <style>
+        .postCreate{
+            border: 2px solid black;
+            margin: 2rem 0.7rem;
+            padding: 1rem 1rem;
+        }
+    </style>
+</head>
+<body>
+{{>layout/nav_bar}}
+
+<article>
+
+    <div class="postCreate">
+        <form>
+            <div class="form-group row">
+                <label for="inputWriter" class="col-sm-2 col-form-label">작성자</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="createdBy" name="createdBy" readonly value='{{user.name}}'>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputTitle" class="col-sm-2 col-form-label">제목</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="제목입력하세요">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="districtSelect" class="col-sm-2 col-form-label">경기지역 선택</label>
+                <div class="col-sm-6 col-md-3 col-xl-2">
+                    <select class="form-control" id="district" name='district'>
+                        <option selected>강서구
+                        <option>금정구
+                        <option>기장군
+                        <option>남구
+                        <option>동구
+                        <option>동래구
+                        <option>부산진구
+                        <option>북구
+                        <option>사상구
+                        <option>사하구
+                        <option>서구
+                        <option>수영구
+                        <option>연제구
+                        <option>중구
+                        <option>해운대구
+                        <option>기타
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="datepicker" class="col-sm-2 col-form-label">경기날짜 선택</label>
+                <div class="col-sm-6 col-md-3 col-xl-2">
+                    <input type="text" id="datepicker" name="dDay">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <br>
+                <textarea class="form-control" id="content" rows="15" name="content">** 원활한 모집을 위해 아래 내용을 입력해주세요 **
+
+경기시간 :   시 ~   시
+
+테니스코트명 :
+
+인원 : 현재   명 / (총  명 모집예정)
+
+대여 예상비용 : 1인당     원 (총     원)
+
+기타 내용(테니스실력, 특이사항 등)
+
+</textarea>
+            </div>
+            <input type="hidden" id="userId" name="userId" value="{{user.id}}">
+            <button type="button" class="btn btn-primary" id="btn-post-save">등록하기</button>
+        </form>
+    </div>
+</article>
+
+<script src="/js/app/post_save.js"></script>
+
+{{>layout/footer}}

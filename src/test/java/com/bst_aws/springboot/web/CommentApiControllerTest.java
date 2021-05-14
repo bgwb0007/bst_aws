@@ -85,6 +85,8 @@ public class CommentApiControllerTest {
     }
     @After
     public void tearDown() throws Exception {
+        userRepository.deleteAll();
+        postRepository.deleteAll();
         commentRepository.deleteAll();
     }
 
@@ -92,8 +94,8 @@ public class CommentApiControllerTest {
     @WithMockUser(roles = "USER")
     public void Comment_등록() throws Exception{
 
-        Post post1 = postRepository.findAll().get(0);
-        User user1 = userRepository.findAll().get(0);
+        Post post1 = postRepository.getOne(1L);
+        User user1 = userRepository.getOne(1L);
 
         String content = "참가합니다";
         String status = "on";
@@ -110,7 +112,7 @@ public class CommentApiControllerTest {
 
         mvc.perform(post(url)
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(new ObjectMapper().writeValueAsString(requestDto)))
+                .content(new ObjectMapper().writeValueAsString(requestDto.toEntity())))
                 .andExpect(status().isOk());
 
         List<Comment> all = commentRepository.findAll();

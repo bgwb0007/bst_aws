@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+    <script src="bootstrap-datepicker.kr.js" charset="UTF-8"></script>
+
+    <style>
+        .postCreate{
+            border: 2px solid black;
+            margin: 2rem 0.7rem;
+            padding: 1rem 1rem;
+        }
+
+        .postCreate .del{
+            margin-left: auto;
+            margin-right: 1rem;
+
+        }
+        .commentBox{
+            margin-top: 2rem;
+            border-top: 1px solid #C3D2BE;
+            padding-top: 1rem;
+        }
+        .commentBox a{
+            margin-left: auto;
+            margin-right: 1rem;
+        }
+
+        .commentCreate{
+            height: 100px;
+        }
+
+        .commentBtn{
+            margin-top: 0.3rem;
+        }
+
+        .commentTable th{
+            width: 20%;
+        }
+
+    </style>
+</head>
+<body>
+{{>layout/nav_bar}}
+
+<article>
+
+    <div class="postCreate">
+        <form>
+            <div class="form-group row">
+                <label for="inputWriter" class="col-sm-2 col-form-label">작성자</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="createdBy" name="createdBy" readonly value='{{post.userName}}'>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputTitle" class="col-sm-2 col-form-label">제목</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="title" name="title" readonly value="{{post.title}}">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="districtSelect" class="col-sm-2 col-form-label">경기지역</label>
+                <div class="col-sm-6 col-md-3 col-xl-2">
+                    <input type="text" class="form-control" id="districtSelect" name="districtSelect" readonly value="{{post.district}}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputD_day" class="col-sm-2 col-form-label">경기날짜</label>
+                <div class="col-sm-6 col-md-3 col-xl-2">
+                    <input type="text" id="inputD_day" name="dDay" readonly value="##dDay">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <br>
+                <textarea class="form-control" id="content" rows="15" name="content" readonly>{{post.content}}</textarea>
+            </div>
+            <input type="hidden" id="userId" name="userId" value="{{user.id}}">
+            {{#myPost}}
+            <a href="/post/update/{id}asdf" class="btn btn-primary">수정하기</a>
+            {{/myPost}}
+        </form>
+    </div>
+
+    <div class="commentBox container">
+        <form>
+            <div class="form-group row">
+                <div class="col-12">
+                    <textarea class="form-control" id="inputInfo" rows="4" placeholder="댓글을 입력해주세요." name="content"></textarea>
+                </div>
+                <button type="button" class="btn btn-success commentBtn" id="btn-comment-save">입력</button>
+            </div>
+            <input type="hidden" id = "postId" name="postId" value="{{post.id}}">
+            <input type="hidden" id = "commentWriter" name="commentWriter" value="{{user.id}}">
+        </form>
+    </div>
+
+    <table class="commentTable table">
+        <tbody>
+        {{#comments}}
+        <tr class="table-info">
+            <th scope="row">{{writer}}<br>{{createdDate}}</th>
+            <td colspan="2">{{content}}</td>
+        </tr>
+        {{/comments}}
+        </tbody>
+    </table>
+
+
+</article>
+
+<script src="/js/app/post_detail.js"></script>
+
+{{>layout/footer}}

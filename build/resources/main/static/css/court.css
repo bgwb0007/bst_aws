@@ -11,7 +11,7 @@
       #courtSubtitle{
         height: 130px;
         width: 100%;
-        background-image: url(../../images/courtSubtitle130.jpg);
+        background-image: url("/image/courtSubtitle130.jpg");
         background-repeat: no-repeat;
         background-position: 90% 0%;
         background-color: #030403;
@@ -46,7 +46,7 @@
         #courtSubtitle{
         height: 200px;
         width: 100%;
-        background-image: url(../../images/courtSubtitle200.jpg);
+        background-image: url("/image/courtSubtitle200.jpg");
         background-repeat: no-repeat;
         background-position: 90% 0%;
         background-color: #030403;
@@ -73,7 +73,7 @@
 
 
       .courtTitle{
-        background-image: url(../../images/racket64.png);
+        background-image: url("/image/racket64.png");
         background-repeat: no-repeat;
         background-position: 95% -100%;
 
