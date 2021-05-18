@@ -110,6 +110,8 @@ public class CommentApiControllerTest {
 
         String url = "http://localhost:" + port + "/api/v2/comment";
 
+        
+        //param > 객체 테스트방법
         mvc.perform(post(url)
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(new ObjectMapper().writeValueAsString(requestDto.toEntity())))
@@ -146,6 +148,7 @@ public class CommentApiControllerTest {
                 .content(content)
                 .build();
         String url = "http://localhost:" + port + "/api/v2/comment/" + commentId;
+        
         //when
         mvc.perform(put(url)
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
