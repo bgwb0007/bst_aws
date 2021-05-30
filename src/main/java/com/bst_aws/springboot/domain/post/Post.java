@@ -5,6 +5,7 @@ import com.bst_aws.springboot.domain.comment.Comment;
 import com.bst_aws.springboot.domain.user.User;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "post")
+@EqualsAndHashCode(exclude = "commentList")
 public class Post extends BaseTimeEntity {
 
     @Id

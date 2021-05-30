@@ -4,10 +4,7 @@ import com.bst_aws.springboot.domain.BaseTimeEntity;
 import com.bst_aws.springboot.domain.comment.Comment;
 import com.bst_aws.springboot.domain.post.Post;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
@@ -16,6 +13,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @Entity
+@EqualsAndHashCode(exclude = {"commentList","postList"})
 public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
