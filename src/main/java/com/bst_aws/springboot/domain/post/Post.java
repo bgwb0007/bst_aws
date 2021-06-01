@@ -1,22 +1,17 @@
 package com.bst_aws.springboot.domain.post;
 
 import com.bst_aws.springboot.domain.BaseTimeEntity;
-import com.bst_aws.springboot.domain.comment.Comment;
 import com.bst_aws.springboot.domain.user.User;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @NoArgsConstructor
 @Entity
 @Table(name = "post")
-@EqualsAndHashCode(exclude = "commentList")
 public class Post extends BaseTimeEntity {
 
     @Id
@@ -42,9 +37,6 @@ public class Post extends BaseTimeEntity {
     @JoinColumn
     private User user;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "post")
-    @JsonManagedReference
-    private List<Comment> commentList;
 
     @Builder
     public Post(String content, String createdBy, String dDay, String district, int hits,

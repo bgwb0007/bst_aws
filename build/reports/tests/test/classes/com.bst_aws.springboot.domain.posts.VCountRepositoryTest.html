@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.194s</div>
+<div class="counter">0.178s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,17 +79,17 @@
 </thead>
 <tr>
 <td class="success">saveOrUpdate_테스트</td>
-<td class="success">0.127s</td>
+<td class="success">0.124s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">방문자수저장_불러오기</td>
-<td class="success">0.018s</td>
+<td class="success">0.016s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">이미생성됐는지_확인_date_email</td>
-<td class="success">0.049s</td>
+<td class="success">0.038s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,22 +97,22 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2021-05-30 19:48:16.796  INFO 36256 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bst_aws.springboot.domain.posts.VCountRepositoryTest], using SpringBootContextLoader
-2021-05-30 19:48:16.799  INFO 36256 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.bst_aws.springboot.domain.posts.VCountRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2021-05-30 19:48:16.799  INFO 36256 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.bst_aws.springboot.domain.posts.VCountRepositoryTest]: VCountRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2021-05-30 19:48:16.803  INFO 36256 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.bst_aws.springboot.Application for test class com.bst_aws.springboot.domain.posts.VCountRepositoryTest
-2021-05-30 19:48:16.807  INFO 36256 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2021-05-30 19:48:16.810  INFO 36256 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@676a10d7, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3f3b8c33, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6c95b552, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1a283020, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2df3671a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4eca3c83, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@f343f2d, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@5446a7db, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@62bbc1fe, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7d0ad70e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@536942d5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@32f05f1c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@e78dc8d, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@25e1c8eb]
+<pre>2021-06-01 23:42:20.899  INFO 18852 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bst_aws.springboot.domain.posts.VCountRepositoryTest], using SpringBootContextLoader
+2021-06-01 23:42:20.902  INFO 18852 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.bst_aws.springboot.domain.posts.VCountRepositoryTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-06-01 23:42:20.903  INFO 18852 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.bst_aws.springboot.domain.posts.VCountRepositoryTest]: VCountRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-06-01 23:42:20.906  INFO 18852 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.bst_aws.springboot.Application for test class com.bst_aws.springboot.domain.posts.VCountRepositoryTest
+2021-06-01 23:42:20.910  INFO 18852 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2021-06-01 23:42:20.913  INFO 18852 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7a5c8a44, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@251c1c14, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@57437b1e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@304697dd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2ed6353b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6bef6049, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@27b87da1, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@2344eef4, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@3c24684a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2cd9baaf, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@48e88fe0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4c5feb47, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@53a6bcbe, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@32cb68a7]
 Hibernate: insert into vcount (created_date, modified_date, count, user_email, visited_date) values (?, ?, ?, ?, ?)
-Hibernate: select vcount0_.id as id1_6_, vcount0_.created_date as created_2_6_, vcount0_.modified_date as modified3_6_, vcount0_.count as count4_6_, vcount0_.user_email as user_ema5_6_, vcount0_.visited_date as visited_6_6_ from vcount vcount0_ where (vcount0_.visited_date like ? escape ?) and (vcount0_.user_email is null)
+Hibernate: select vcount0_.id as id1_5_, vcount0_.created_date as created_2_5_, vcount0_.modified_date as modified3_5_, vcount0_.count as count4_5_, vcount0_.user_email as user_ema5_5_, vcount0_.visited_date as visited_6_5_ from vcount vcount0_ where (vcount0_.visited_date like ? escape ?) and (vcount0_.user_email is null)
 Hibernate: insert into vcount (created_date, modified_date, count, user_email, visited_date) values (?, ?, ?, ?, ?)
-Hibernate: select vcount0_.id as id1_6_, vcount0_.created_date as created_2_6_, vcount0_.modified_date as modified3_6_, vcount0_.count as count4_6_, vcount0_.user_email as user_ema5_6_, vcount0_.visited_date as visited_6_6_ from vcount vcount0_ order by vcount0_.created_date desc
-Hibernate: select vcount0_.id as id1_6_, vcount0_.created_date as created_2_6_, vcount0_.modified_date as modified3_6_, vcount0_.count as count4_6_, vcount0_.user_email as user_ema5_6_, vcount0_.visited_date as visited_6_6_ from vcount vcount0_
+Hibernate: select vcount0_.id as id1_5_, vcount0_.created_date as created_2_5_, vcount0_.modified_date as modified3_5_, vcount0_.count as count4_5_, vcount0_.user_email as user_ema5_5_, vcount0_.visited_date as visited_6_5_ from vcount vcount0_ order by vcount0_.created_date desc
+Hibernate: select vcount0_.id as id1_5_, vcount0_.created_date as created_2_5_, vcount0_.modified_date as modified3_5_, vcount0_.count as count4_5_, vcount0_.user_email as user_ema5_5_, vcount0_.visited_date as visited_6_5_ from vcount vcount0_
 Hibernate: delete from vcount where id=?
 Hibernate: delete from vcount where id=?
 Hibernate: insert into vcount (created_date, modified_date, count, user_email, visited_date) values (?, ?, ?, ?, ?)
-Hibernate: select vcount0_.id as id1_6_, vcount0_.created_date as created_2_6_, vcount0_.modified_date as modified3_6_, vcount0_.count as count4_6_, vcount0_.user_email as user_ema5_6_, vcount0_.visited_date as visited_6_6_ from vcount vcount0_ order by vcount0_.created_date desc
-Hibernate: select vcount0_.id as id1_6_, vcount0_.created_date as created_2_6_, vcount0_.modified_date as modified3_6_, vcount0_.count as count4_6_, vcount0_.user_email as user_ema5_6_, vcount0_.visited_date as visited_6_6_ from vcount vcount0_
+Hibernate: select vcount0_.id as id1_5_, vcount0_.created_date as created_2_5_, vcount0_.modified_date as modified3_5_, vcount0_.count as count4_5_, vcount0_.user_email as user_ema5_5_, vcount0_.visited_date as visited_6_5_ from vcount vcount0_ order by vcount0_.created_date desc
+Hibernate: select vcount0_.id as id1_5_, vcount0_.created_date as created_2_5_, vcount0_.modified_date as modified3_5_, vcount0_.count as count4_5_, vcount0_.user_email as user_ema5_5_, vcount0_.visited_date as visited_6_5_ from vcount vcount0_
 Hibernate: delete from vcount where id=?
 Hibernate: insert into vcount (created_date, modified_date, count, user_email, visited_date) values (?, ?, ?, ?, ?)
 Hibernate: insert into vcount (created_date, modified_date, count, user_email, visited_date) values (?, ?, ?, ?, ?)
@@ -120,7 +120,7 @@ Hibernate: select vcount0_.id as col_0_0_ from vcount vcount0_ where (vcount0_.v
 Hibernate: select vcount0_.id as col_0_0_ from vcount vcount0_ where (vcount0_.visited_date like ? escape ?) and (vcount0_.user_email is null) limit ?
 Hibernate: select vcount0_.id as col_0_0_ from vcount vcount0_ where (vcount0_.visited_date like ? escape ?) and vcount0_.user_email=? limit ?
 Hibernate: select vcount0_.id as col_0_0_ from vcount vcount0_ where (vcount0_.visited_date like ? escape ?) and (vcount0_.user_email is null) limit ?
-Hibernate: select vcount0_.id as id1_6_, vcount0_.created_date as created_2_6_, vcount0_.modified_date as modified3_6_, vcount0_.count as count4_6_, vcount0_.user_email as user_ema5_6_, vcount0_.visited_date as visited_6_6_ from vcount vcount0_
+Hibernate: select vcount0_.id as id1_5_, vcount0_.created_date as created_2_5_, vcount0_.modified_date as modified3_5_, vcount0_.count as count4_5_, vcount0_.user_email as user_ema5_5_, vcount0_.visited_date as visited_6_5_ from vcount vcount0_
 Hibernate: delete from vcount where id=?
 Hibernate: delete from vcount where id=?
 </pre>
@@ -134,7 +134,7 @@ Hibernate: delete from vcount where id=?
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.10.2</a> at 2021. 5. 30 오후 7:48:18</p>
+<a href="http://www.gradle.org">Gradle 4.10.2</a> at 2021. 6. 1 오후 11:42:22</p>
 </div>
 </div>
 </body>

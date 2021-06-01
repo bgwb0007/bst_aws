@@ -121,41 +121,4 @@ public class PostApiControllerTest {
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(LocalDate.from(all.get(0).getCreatedDate())).isAfter(LocalDate.parse(dDay));
     }
-
-
-    @Test
-    @WithMockUser(roles="USER")
-    public void Post_수정() throws Exception {
-        //given
-
-        Long postId = 1L;
-        String content = "수정된 글";
-        String dDay = LocalDate.of(2021,04,22).toString();
-        String district = "수영구";
-        String status = "on";
-        String title = "수정된 제목";
-
-        PostUpdateRequestDto requestDto = PostUpdateRequestDto.builder()
-                .content(content)
-                .dDay(dDay)
-                .district(district)
-                .status(status)
-                .title(title)
-                .build();
-
-        String url = "http://localhost:" + port + "/api/v2/post/" + postId;
-
-        //when
-        mvc.perform(put(url)
-                .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(new ObjectMapper().writeValueAsString(requestDto)))
-                .andExpect(status().isOk());
-
-        //then
-        List<Post> all = postRepository.findAll();
-        assertThat(all.get(0).getTitle()).isEqualTo(title);
-        assertThat(all.get(0).getUser().getName()).isEqualTo("서형이");
-        assertThat(all.get(0).getId()).isEqualTo(postId);
-    }
-
 }

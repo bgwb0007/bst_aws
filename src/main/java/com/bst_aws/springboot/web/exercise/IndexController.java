@@ -3,24 +3,17 @@ package com.bst_aws.springboot.web.exercise;
 
 import com.bst_aws.springboot.config.auth.LoginUser;
 import com.bst_aws.springboot.config.auth.dto.SessionUser;
-import com.bst_aws.springboot.service.comment.CommentService;
 import com.bst_aws.springboot.service.court.CourtService;
 import com.bst_aws.springboot.service.lesson.LessonService;
 import com.bst_aws.springboot.service.post.PostService;
 import com.bst_aws.springboot.service.posts.PostsService;
 import com.bst_aws.springboot.service.vcount.VCountService;
 import com.bst_aws.springboot.web.dto.exercise.PostsResponseDto;
-import com.bst_aws.springboot.web.dto.request.VCountSaveRequestDto;
-import com.bst_aws.springboot.web.dto.response.CommentListResponseDto;
-import com.bst_aws.springboot.web.dto.response.PostResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import javax.servlet.http.HttpSession;
-import java.time.LocalDate;
 
 @RequiredArgsConstructor
 @Controller
@@ -31,7 +24,6 @@ public class IndexController {
     private final PostService postService;
     private final CourtService courtService;
     private final VCountService vCountService;
-    private final CommentService commentService;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
@@ -102,7 +94,6 @@ public class IndexController {
     public String postDetail(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
         model.addAttribute("post", postService.findById(id));
         model.addAttribute("user",user);
-        model.addAttribute("comments",commentService.findAllByPostId(id));
         if (postService.isMyPost(id, user.getId())) {
             model.addAttribute("myPost", "myPost");
         }
