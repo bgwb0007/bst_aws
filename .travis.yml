@@ -18,7 +18,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  -zip -r bst-aws *
+  - zip -r bst-aws *
   - mkdir -p deploy
   - mv bst-aws.zip deploy/bst-aws.zip
 
