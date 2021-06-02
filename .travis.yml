@@ -6,6 +6,9 @@ branches:
   only:
     - master
 
+before_install:
+  - chmod +x gradlew
+
 # Travis CI 서버의 home
 cache:
   directories:
@@ -13,6 +16,22 @@ cache:
     - '$HOME/.gradle'
 
 script: "./gradlew clean build"
+
+before_deploy:
+  - zip -r bst-springboot-webservice
+  - mkdir -p deploy
+  - mv bst-springboot-webservice.zip deploy/bst-springboot-webservice.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: bst-springboot-build # s3 버킷
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private # zip 파일 접근을 private 으로
+    local_dir: deploy #before_deploy 에서 생성한 디렉토리
+    wait-until-deployed: true
 
 # CI 실행 완료 시 메일로 알람
 notifications:
