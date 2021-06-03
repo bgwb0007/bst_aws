@@ -6,7 +6,9 @@
         }
         .navbar{
             
-        }
+        }.navbar-brand span{
+           font-family: 'Jua', sans-serif;
+         }
 
       .login{
         font-size: 70%;

@@ -1,4 +1,8 @@
 . {}
+
+.navbar-brand span{
+    font-family: 'Jua', sans-serif;
+}
 #postSubtitle{
     height: 130px;
     width: 100%;

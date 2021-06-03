@@ -14,50 +14,23 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-    <script src="bootstrap-datepicker.kr.js" charset="UTF-8"></script>
     <script>
-        $( function() {
-            $( "#datepicker" ).datepicker();
-        } );
+        $.datepicker.setDefaults({
+            dateFormat: 'yy-mm-dd',
+            prevText: '이전 달',
+            nextText: '다음 달',
+            monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            showMonthAfterYear: true,
+            yearSuffix: '년'
+        });
 
-        ( function( factory ) {
-            if ( typeof define === "function" && define.amd ) {
-
-                // AMD. Register as an anonymous module.
-                define( [ "../widgets/datepicker" ], factory );
-            } else {
-
-                // Browser globals
-                factory( jQuery.datepicker );
-            }
-        }( function( datepicker ) {
-
-            datepicker.regional.ko = {
-                closeText: "닫기",
-                prevText: "이전달",
-                nextText: "다음달",
-                currentText: "오늘",
-                monthNames: [ "1월","2월","3월","4월","5월","6월",
-                    "7월","8월","9월","10월","11월","12월" ],
-                monthNamesShort: [ "1월","2월","3월","4월","5월","6월",
-                    "7월","8월","9월","10월","11월","12월" ],
-                dayNames: [ "일요일","월요일","화요일","수요일","목요일","금요일","토요일" ],
-                dayNamesShort: [ "일","월","화","수","목","금","토" ],
-                dayNamesMin: [ "일","월","화","수","목","금","토" ],
-                weekHeader: "주",
-                dateFormat: "yy-mm-dd",
-                firstDay: 0,
-                isRTL: false,
-                showMonthAfterYear: true,
-                yearSuffix: "년" };
-            datepicker.setDefaults( datepicker.regional.ko );
-
-            return datepicker.regional.ko;
-        } ) );
+        $(function() {
+            $("#datepicker").datepicker();
+        });
     </script>
 
     <style>
@@ -123,7 +96,7 @@
                 <br>
                 <textarea class="form-control" id="content" rows="15" name="content">** 원활한 모집을 위해 아래 내용을 입력해주세요 **
 
-경기시간 :   시 ~   시
+경기시간 :   시 ~   시 ㅅㄷㅅㄷ
 
 테니스코트명 :
 
@@ -142,5 +115,3 @@
 </article>
 
 <script src="/js/app/post_save.js"></script>
-
-{{>layout/footer}}

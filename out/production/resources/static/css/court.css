@@ -6,6 +6,9 @@
       .login{
         font-size: 70%;
       }
+      .navbar-brand span{
+           font-family: 'Jua', sans-serif;
+       }
       
 
       #courtSubtitle{
