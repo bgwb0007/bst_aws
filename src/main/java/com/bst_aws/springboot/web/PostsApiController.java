@@ -1,4 +1,4 @@
-package com.bst_aws.springboot.web.exercise;
+package com.bst_aws.springboot.web;
 
 import com.bst_aws.springboot.service.posts.PostsService;
 import com.bst_aws.springboot.web.dto.exercise.PostsListResponseDto;

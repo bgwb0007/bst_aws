@@ -1,4 +1,4 @@
-package com.bst_aws.springboot.web.exercise;
+package com.bst_aws.springboot.web;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ResolvableType;
