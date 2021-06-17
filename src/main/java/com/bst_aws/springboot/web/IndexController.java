@@ -41,7 +41,7 @@ public class IndexController {
                 .userEmail(userEmail)
                 .build());*/
 
-        return "index";
+        return "new_index";
     }
 
     @GetMapping("/posts/save")
@@ -65,6 +65,7 @@ public class IndexController {
     public String test() {
         return "new_index";
     }
+
     @GetMapping("/court")
     public String court(Model model) {
         model.addAttribute("courts", courtService.findAllAsc());
