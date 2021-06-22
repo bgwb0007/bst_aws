@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html style="height: 100%;">
 <head>
     <!-- Required meta tags -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -7,22 +7,34 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<style>
+    #login-margin{
+        margin-top: 100px;
+    }
+    @media (min-width: 600px) {
+        #login-margin {
+            margin-top: 300px;
+        }
+    }
+
+</style>
+
 </head>
-<body>
+<body style="height: 100%;">
 
 {{>layout/nav_bar}}
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12">
-                <a href="/oauth2/authorization/google">Google Login</a>
-            </div>
-            <div class="col-12">
-                <a href="/oauth2/authorization/naver">Naver Login</a>
+    <div id="login-margin" >
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6 col-lg-3 border bg-light text-dark">
+                    <a href="/oauth2/authorization/google">Google Login</a>
+                </div>
+                <div class="col-6 col-lg-3 border bg-success text-white">
+                    <a href="/oauth2/authorization/naver">Naver Login</a>
+                </div>
             </div>
         </div>
     </div>
-
 
 
 </body>
