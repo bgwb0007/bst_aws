@@ -4,4 +4,4 @@
 ##### Java, SpringBoot
 
 * Travis CI
-* NGinX
+* NGINX
