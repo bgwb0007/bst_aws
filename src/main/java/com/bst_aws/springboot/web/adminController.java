@@ -34,6 +34,15 @@ public class adminController {
         }
         return "admin/admin";
     }
+    @GetMapping("/admin/court")
+    public String court_save(Model model) {
+        return "admin/court_save";
+    }
+
+    @GetMapping("/admin/lesson")
+    public String lesson_save(Model model) {
+        return "admin/lesson_save";
+    }
 
 
 
