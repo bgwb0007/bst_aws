@@ -17,7 +17,7 @@
 {{>layout/nav_bar_admin}}
 
 <article>
-    <div>
+    <div class="container">
 
         <label for="inputCourtName">name</label>
         <input type="text" class="form-control" id="inputCourtName">
@@ -37,6 +37,9 @@
         <label for="inputCourtInfo">info</label>
         <input type="text" class="form-control" id="inputCourtInfo">
 
+        <label for="inputCourtDistrict">district</label>
+        <input type="text" class="form-control" id="inputCourtDistrict">
+
     </div>
 </article>
 
@@ -47,6 +50,6 @@
 
 
 {{>layout/footer_new}}
-
+<script src="/js/app/court_save.js"></script>
 </body>
 </html>
