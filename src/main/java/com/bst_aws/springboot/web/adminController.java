@@ -35,6 +35,11 @@ public class adminController {
         return "admin/admin";
     }
     @GetMapping("/admin/court")
+    public String court_view(Model model) {
+        model.addAttribute("courts", courtService.findAllAsc());
+        return "admin/court_view";
+    }
+    @GetMapping("/admin/court/save")
     public String court_save(Model model) {
         return "admin/court_save";
     }
