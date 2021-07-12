@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/static/css/index.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+{{>layout/nav_bar}}
+{{>layout/nav_bar_admin}}
+<br>
+
+<article>
+    <div class="container">
+    <a href="/admin/court/save" class="btn btn-primary">코트 추가</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">name</th>
+                <th scope="col">address</th>
+                <th scope="col">web</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#courts}}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{name}}</td>
+                <td>{{address}}</td>
+                <td>{{web}}</td>
+            </tr>
+        {{/courts}}
+        </tbody>
+    </table>
+    </div>
+</article>
+
+
+<aside>
+</aside>
+
+
+
+{{>layout/footer_new}}
+
+</body>
+</html>

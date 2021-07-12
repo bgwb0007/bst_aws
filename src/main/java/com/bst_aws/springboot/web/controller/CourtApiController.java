@@ -19,6 +19,7 @@ public class CourtApiController {
         return courtService.save(requestDto);
     }
 
+
     @DeleteMapping("/api/v2/court/{id}")
     public Long delete(@PathVariable Long id){
         courtService.delete(id);

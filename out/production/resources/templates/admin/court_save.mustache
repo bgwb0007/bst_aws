@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/static/css/index.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+{{>layout/nav_bar}}
+{{>layout/nav_bar_admin}}
+
+<article>
+    <div class="container">
+        <form>
+        <label for="inputCourtName">name</label>
+        <input type="text" class="form-control" id="inputCourtName">
+
+        <label for="inputCourtE">E</label>
+        <input type="text" class="form-control" id="inputCourtE">
+
+        <label for="inputCourtN">N</label>
+        <input type="text" class="form-control" id="inputCourtN">
+
+        <label for="inputCourtAddress">address</label>
+        <input type="text" class="form-control" id="inputCourtAddress">
+
+        <label for="inputCourtWeb">web</label>
+        <input type="text" class="form-control" id="inputCourtWeb">
+
+        <label for="inputCourtInfo">info</label>
+        <input type="text" class="form-control" id="inputCourtInfo">
+
+        <label for="inputCourtDistrict">district</label>
+        <input type="text" class="form-control" id="inputCourtDistrict">
+        </form>
+        <button type="button" class="btn btn-primary" id="btn-court-save">저장하기</button>
+    </div>
+</article>
+
+<aside>
+</aside>
+
+
+
+{{>layout/footer_new}}
+<script src="/js/app/court_save.js"></script>
+</body>
+</html>
