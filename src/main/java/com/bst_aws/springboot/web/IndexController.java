@@ -6,21 +6,18 @@ import com.bst_aws.springboot.config.auth.dto.SessionUser;
 import com.bst_aws.springboot.service.court.CourtService;
 import com.bst_aws.springboot.service.lesson.LessonService;
 import com.bst_aws.springboot.service.post.PostService;
-import com.bst_aws.springboot.service.posts.PostsService;
 import com.bst_aws.springboot.service.vcount.VCountService;
-import com.bst_aws.springboot.web.dto.exercise.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+
 
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
-    private final PostsService postsService;
     private final LessonService lessonService;
     private final PostService postService;
     private final CourtService courtService;
@@ -28,7 +25,6 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
-        model.addAttribute("posts", postsService.findAllDesc());
         String userEmail = "visitor";
         if (user != null) {
             model.addAttribute("userName", user.getName());
@@ -40,25 +36,7 @@ public class IndexController {
                 .visitedDate(LocalDate.now().toString())
                 .userEmail(userEmail)
                 .build());*/
-
         return "new_index";
-    }
-
-    @GetMapping("/posts/save")
-    public String postsSave(Model model, @LoginUser SessionUser user) {
-        if (user != null) {
-            model.addAttribute("userName", user.getName());
-            return "posts-save";
-        }
-        return "index";
-    }
-
-    @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id, Model model) {
-        PostsResponseDto dto = postsService.findById(id);
-        model.addAttribute("post", dto);
-
-        return "posts-update";
     }
 
     @GetMapping("/test")
