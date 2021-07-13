@@ -6,7 +6,6 @@ import com.bst_aws.springboot.config.auth.dto.SessionUser;
 import com.bst_aws.springboot.service.court.CourtService;
 import com.bst_aws.springboot.service.lesson.LessonService;
 import com.bst_aws.springboot.service.post.PostService;
-import com.bst_aws.springboot.service.posts.PostsService;
 import com.bst_aws.springboot.service.vcount.VCountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class adminController {
 
-    private final PostsService postsService;
     private final LessonService lessonService;
     private final PostService postService;
     private final CourtService courtService;
