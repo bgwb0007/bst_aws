@@ -8,12 +8,10 @@ import com.bst_aws.springboot.service.lesson.LessonService;
 import com.bst_aws.springboot.service.post.PostService;
 import com.bst_aws.springboot.service.posts.PostsService;
 import com.bst_aws.springboot.service.vcount.VCountService;
-import com.bst_aws.springboot.web.dto.exercise.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @RequiredArgsConstructor
 @Controller
