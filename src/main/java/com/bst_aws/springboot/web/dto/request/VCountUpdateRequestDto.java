@@ -14,10 +14,5 @@ public class VCountUpdateRequestDto {
     public VCountUpdateRequestDto(Integer count){
         this.count=count;
     }
-    public VCount toEntity(){
-        return VCount.builder()
-                .count(count)
-                .build();
-    }
 
 }
