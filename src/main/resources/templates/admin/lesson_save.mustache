@@ -17,7 +17,31 @@
 {{>layout/nav_bar_admin}}
 
 <article>
+    <div class="container">
+        <form>
+            <label for="inputLessonName">name</label>
+            <input type="text" class="form-control" id="inputLessonName">
 
+            <label for="inputLessonE">E</label>
+            <input type="text" class="form-control" id="inputLessonE">
+
+            <label for="inputLessonN">N</label>
+            <input type="text" class="form-control" id="inputLessonN">
+
+            <label for="inputLessonAddress">address</label>
+            <input type="text" class="form-control" id="inputLessonAddress">
+
+            <label for="inputLessonWeb">web</label>
+            <input type="text" class="form-control" id="inputLessonWeb">
+
+            <label for="inputLessonInfo">info</label>
+            <input type="text" class="form-control" id="inputLessonInfo">
+
+            <label for="inputLessonDistrict">district</label>
+            <input type="text" class="form-control" id="inputLessonDistrict">
+        </form>
+        <button type="button" class="btn btn-primary" id="btn-lesson-save">저장하기</button>
+    </div>
 </article>
 
 
@@ -27,6 +51,6 @@
 
 
 {{>layout/footer_new}}
-
+<script src="/js/app/lesson_save.js"></script>
 </body>
 </html>
