@@ -41,6 +41,12 @@ public class adminController {
     }
 
     @GetMapping("/admin/lesson")
+    public String lesson_view(Model model) {
+        model.addAttribute("lessons", lessonService.findAllAsc());
+        return "admin/lesson_view";
+    }
+
+    @GetMapping("/admin/lesson/save")
     public String lesson_save(Model model) {
         return "admin/lesson_save";
     }
