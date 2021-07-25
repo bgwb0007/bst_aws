@@ -59,7 +59,7 @@ public class VCountRepositoryTest {
         String visitedDate = LocalDate.now().toString();
         String userEmail = "bgwb0007@naver.com";
         String now_s = LocalDate.now().toString();
-        String dDay = LocalDate.of(2021, 04, 13).toString();
+        String dDay = LocalDate.of(2021, 07, 24).toString();
 
         vCountRepository.save(VCount.builder()
                 .count(count)
@@ -95,7 +95,7 @@ public class VCountRepositoryTest {
         String visitedDate = LocalDate.now().toString();
         String userEmail = "bgwb0007@naver.com";
         String now_s = LocalDate.now().toString();
-        String dDay = LocalDate.of(2021, 04, 13).toString();
+        String dDay = LocalDate.of(2021, 07, 24).toString();
 
         vCountRepository.save(VCount.builder()
                 .count(count)
