@@ -57,7 +57,7 @@ public class VCountRepositoryTest {
         //given
         int count = 22;
         String visitedDate = LocalDate.now().toString();
-        String userEmail = "bgwb0007@naver.com";
+        String userEmail = "tesssst@naver.com";
         String now_s = LocalDate.now().toString();
         String dDay = LocalDate.of(2021, 07, 24).toString();
 
@@ -78,7 +78,7 @@ public class VCountRepositoryTest {
         Boolean isVisited_t = vCountRepository.existsByVisitedDateContainingAndUserEmail(now_s, userEmail);
         Boolean isVisited_f = vCountRepository.existsByVisitedDateContainingAndUserEmail(now_s, null);
         Boolean dDay_f = vCountRepository.existsByVisitedDateContainingAndUserEmail(dDay, userEmail);
-        Boolean dDay_t = vCountRepository.existsByVisitedDateContainingAndUserEmail(dDay, null);
+        Boolean dDay_t = vCountRepository.existsByVisitedDateContainingAndUserEmail(dDay, "not email");
 
         //then
         assertThat(isVisited_t).isTrue();
