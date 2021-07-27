@@ -78,7 +78,7 @@ public class VCountRepositoryTest {
         Boolean isVisited_t = vCountRepository.existsByVisitedDateContainingAndUserEmail(now_s, userEmail);
         Boolean isVisited_f = vCountRepository.existsByVisitedDateContainingAndUserEmail(now_s, null);
         Boolean dDay_f = vCountRepository.existsByVisitedDateContainingAndUserEmail(dDay, userEmail);
-        Boolean dDay_t = vCountRepository.existsByVisitedDateContainingAndUserEmail(dDay, "not email");
+        Boolean dDay_t = vCountRepository.existsByVisitedDateContainingAndUserEmail(dDay, null);
 
         //then
         assertThat(isVisited_t).isTrue();
